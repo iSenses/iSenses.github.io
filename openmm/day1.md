@@ -30,8 +30,15 @@ openMM是基于Pytorch搭建的Code Base，在Pytorch的基础上增加了许多
 
 ## 机器学习基本流程
 - 训练
+  - 监督学习
+  - 无监督学习
+  - 半监督学习
+  - 强化学习
 - 验证
+  - 各种损失函数的计算与应用
 - 应用
+  - 模型在各个硬件平台的量化部署
+
 
 <image src="img/routines.png" align="center" width="900"/>
 <br/>
@@ -40,7 +47,7 @@ openMM是基于Pytorch搭建的Code Base，在Pytorch的基础上增加了许多
 <image src="img/training.png" align="center" width="900"/>
 <br/>
 
-训练数据不当，次数过多可能产生过拟合，应当避免。
+- 训练数据不当，次数过多可能产生过拟合，应当避免。
 <image src="img/overfitting.png" align="center" width="900"/>
 <br/>
 
