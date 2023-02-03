@@ -17,6 +17,11 @@ $$ F: \reals{H \times W \times 3} \to \{1, \dots, K\} $$
 F: \reals{H \times W \times 3} \to \{1, \dots, K\}
 ```
 
+```latex
+$$ X \in \reals^{H\times W\times 3} $$
+\( F: \reals{H \times W \times 3} \to \{1, \dots, K\} \)
+```
+
 ## 学习步骤
 1. 收集数据
 2. 定义模型
