@@ -7,7 +7,7 @@
 数学表示：
 
 $$\begin{aligned}
-X \in \reals^{H \times W \times 3}
+X \in \mathbb{R}^{H \times W \times 3}
 \end{aligned}$$
 
 $$\begin{aligned}
@@ -15,7 +15,7 @@ Y \in \{1, \dots, K \}
 \end{aligned}$$
 
 $$\begin{aligned}
-F: \reals^{H \times W \times 3} \to \{1, \dots, K\}
+F: \mathbb{R}^{H \times W \times 3} \to \{1, \dots, K\}
 \end{aligned}$$
 
 ## 学习步骤
