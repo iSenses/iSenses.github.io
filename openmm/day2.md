@@ -5,31 +5,18 @@
 给定一张图片，识别图像中的物体是什么
 
 数学表示：
-<br/>
-<img src="https://render.githubusercontent.com/render/math?math=X \in \reals^{H \times W \times 3}">
-<br/>
-<img src="https://render.githubusercontent.com/render/math?math=Y \in \{1, \dots, K \}">
-<br/>
-<img src="https://render.githubusercontent.com/render/math?math=F: \reals^{H \times W \times 3} \to \{1, \dots, K\}">
-<br/>
-<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
-<br/>
-
-This sentence uses `$` delimiters to show math inline:  $\sqrt{3x-1}+(1+x)^2$
-
-**Here is some math!**
-
-```math
-\sqrt{3}
-```
-
-text
 
 $$\begin{aligned}
-E = mc^2
+X \in \reals^{H \times W \times 3}
 \end{aligned}$$
 
-text
+$$\begin{aligned}
+Y \in \{1, \dots, K \}
+\end{aligned}$$
+
+$$\begin{aligned}
+F: \reals^{H \times W \times 3} \to \{1, \dots, K\}
+\end{aligned}$$
 
 ## 学习步骤
 1. 收集数据
