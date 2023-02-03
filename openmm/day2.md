@@ -6,7 +6,6 @@
 数学表示：
 $$ X \in \reals^{H\times W\times 3} $$
 
-\(Y \in \{1, \dots, K \} \)
 $$ y \in \{1, \dots, K \} $$
 
 \( F: \reals{H \times W \times 3} \to \{1, \dots, K\} \)
