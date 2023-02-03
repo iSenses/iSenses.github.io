@@ -9,10 +9,18 @@
 <br/>
 <img src="https://render.githubusercontent.com/render/math?math=Y \in \{1, \dots, K \}">
 <br/>
-<img src="https://render.githubusercontent.com/render/math?math=F: \reals{H \times W \times 3} \to \{1, \dots, K\}">
+<img src="https://render.githubusercontent.com/render/math?math=F: \reals^{H \times W \times 3} \to \{1, \dots, K\}">
 <br/>
 <img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
 <br/>
+
+This sentence uses `$` delimiters to show math inline:  $\sqrt{3x-1}+(1+x)^2$
+
+**Here is some math!**
+
+```math
+\sqrt{3}
+```
 
 ## 学习步骤
 1. 收集数据
