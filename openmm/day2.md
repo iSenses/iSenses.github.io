@@ -4,7 +4,6 @@
 给定一张图片，识别图像中的物体是什么
 
 数学表示：
-\(X \in \reals^{H\times W\times 3} \)
 $$ X \in \reals^{H\times W\times 3} $$
 
 \(Y \in \{1, \dots, K \} \)
