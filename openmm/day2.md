@@ -4,35 +4,13 @@
 给定一张图片，识别图像中的物体是什么
 
 数学表示：
-$$ X \in \reals^{H\times W\times 3} $$
-
-inline: $y \in \{1, \dots, K \}$
-
-\( F: \reals{H \times W \times 3} \to \{1, \dots, K\} \)
-$$ F: \reals{H \times W \times 3} \to \{1, \dots, K\} $$
-
-另一种 $ X \in \reals^{H \times W \times 3'' $
-
-```math
-F: \reals{H \times W \times 3} \to \{1, \dots, K\}
-```
-
-```latex
-$$ X \in \reals^{H\times W\times 3} $$
-\( F: \reals{H \times W \times 3} \to \{1, \dots, K\} \)
-```
-
-\begin{equation}
-\begin{aligned}
-  {\sigma}_{1} =  
-  \begin{pmatrix}
-    0 & 1 \\\\\\\\
-    1 & 0
-  \end{pmatrix} 
-\end{aligned}
-\end{equation}
-
-Another way
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=X \in \reals^{H \times W \times 3}">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=Y \in \{1, \dots, K \}">
+<br/>
+<img src="https://render.githubusercontent.com/render/math?math=F: \reals{H \times W \times 3} \to \{1, \dots, K\}">
+<br/>
 <img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
 
 ## 学习步骤
