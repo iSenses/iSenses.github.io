@@ -32,6 +32,8 @@ $$ X \in \reals^{H\times W\times 3} $$
 \end{aligned}
 \end{equation}
 
+Another way
+<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
 
 ## 学习步骤
 1. 收集数据
