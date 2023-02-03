@@ -22,6 +22,14 @@ This sentence uses `$` delimiters to show math inline:  $\sqrt{3x-1}+(1+x)^2$
 \sqrt{3}
 ```
 
+text
+
+$$\begin{aligned}
+E = mc^2
+\end{aligned}$$
+
+text
+
 ## 学习步骤
 1. 收集数据
 2. 定义模型
