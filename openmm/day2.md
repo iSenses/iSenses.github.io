@@ -6,12 +6,16 @@
 数学表示：
 $$ X \in \reals^{H\times W\times 3} $$
 
-$$ y \in \{1, \dots, K \} $$
+inline: $y \in \{1, \dots, K \}$
 
 \( F: \reals{H \times W \times 3} \to \{1, \dots, K\} \)
 $$ F: \reals{H \times W \times 3} \to \{1, \dots, K\} $$
 
-另一种 $ X \in \reals^{H \times W \times 3} $
+另一种 $ X \in \reals^{H \times W \times 3'' $
+
+```math
+F: \reals{H \times W \times 3} \to \{1, \dots, K\}
+```
 
 ## 学习步骤
 1. 收集数据
