@@ -22,6 +22,17 @@ $$ X \in \reals^{H\times W\times 3} $$
 \( F: \reals{H \times W \times 3} \to \{1, \dots, K\} \)
 ```
 
+\begin{equation}
+\begin{aligned}
+  {\sigma}_{1} =  
+  \begin{pmatrix}
+    0 & 1 \\\\\\\\
+    1 & 0
+  \end{pmatrix} 
+\end{aligned}
+\end{equation}
+
+
 ## 学习步骤
 1. 收集数据
 2. 定义模型
