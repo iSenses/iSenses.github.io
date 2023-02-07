@@ -46,4 +46,8 @@
    RetinaNet,YOLO
 4. Transformer
    DETR, Deformable DETR
+
+
+- 基于CoCo数据集的检测结果的进步
+
 ![detection results progress](img/detection_results.png)
