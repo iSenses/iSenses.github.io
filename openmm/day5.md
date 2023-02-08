@@ -1,14 +1,15 @@
 # Day 5
 
 ## MMDetection
-MMDetection 提供400 余个性能优良的预训练模型，开箱即 用，几行Python API 即可调用强大的检测能力, 涵盖60 余个目标检测算法，并提供方便易用的 工具，经过简单的配置文件改写和调参就可以训练自己的目标检 测模型。
+MMDetection 提供400余个性能优良的预训练模型，开箱即用，几行Python API即可调用强大的检测能力, 涵盖60 余个目标检测算法，并提供方便易用的工具，经过简单的配置文件改写和调参就可以训练自己的目标检测模型。
 ![mmdetection](img/mmdetection_1.png)
 
 MMDetection 中的常用训练策略包括SGD, learning_rate warmup 等
 
 ## COCO 数据集的标注格式
 ![coco](img/mmdetection_coco.png)
-所有标注信息存储在一个列表中，每个标注对应
+
+- 所有标注信息存储在一个列表中，每个标注对应
 图像上一个物体标注，包含以下字段
 ```json
 annotation {
