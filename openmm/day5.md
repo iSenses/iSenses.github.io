@@ -86,5 +86,5 @@ show_result_pyplot(model, img, result)
 ```
 推理整个文件夹
 ```sh
-mim test  fruit.py --checkpoint latest.pth --show-dir work_dirs/fruit/
+mim test mmdet fruit.py --checkpoint latest.pth --show-dir work_dirs/fruit/
 ```
