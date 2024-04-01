@@ -1,3 +1,3 @@
 # This is a place for writing
-## openmm
-- [day1 机器视觉总论](https://isenses.github.io/openmm/day1)
+## InternLM
+- [day1 InternLM课后笔记与技术报告阅读](https://isenses.github.io/internlm/day1)
