@@ -51,8 +51,7 @@ Xtuner 是我最兴趣的部分， 因为目前没有资源做大规模的训练
 
 
 # InternLM2 技术报告解读 
-[Link text Here](https://link-url-here.org)
-[技术报告链接：InternLM2 Technical Report(2024年3月版)](https://arxiv.org/abs/2403.17297)
+ [技术报告链接：InternLM2 Technical Report(2024年3月版)](https://arxiv.org/abs/2403.17297)
 
 ## 基础架构
 - 三个模型大小
@@ -63,8 +62,8 @@ Xtuner 是我最兴趣的部分， 因为目前没有资源做大规模的训练
 #### InternEvo 预训练模型
 高速可扩展
 一个概念MFU(Model FLOPs Utilization), 代表实际训练计算速度与训练用硬件理论的比值, InternEvo 可以达到88%MFU.
-对计算系统重要的优化体现在减少GPU的通信， InternEvo采用了一系列adaptive sharding 技术， 包括但不限于Full-Replica, Full-sharding, Partial sharding, 建立了一套优化框架， 扩展阅读(Reducing communication overhead of zero for efficient llm training, 2024b)[https://arxiv.org/abs/2311.00257]
-(InternEvo: Efficient longsequence large language model training via hybrid parallelism and redundant sharding.)[https://arxiv.org/abs/2401.09149]
+对计算系统重要的优化体现在减少GPU的通信， InternEvo采用了一系列adaptive sharding 技术， 包括但不限于Full-Replica, Full-sharding, Partial sharding, 建立了一套优化框架， 扩展阅读 [Reducing communication overhead of zero for efficient llm training, 2024b](https://arxiv.org/abs/2311.00257)
+ [InternEvo: Efficient longsequence large language model training via hybrid parallelism and redundant sharding.](https://arxiv.org/abs/2401.09149)
 InternLM2 采用Grouped-Query Attention (GQA) ,高速率，低存储，长文本。
 
 ## 预训练
@@ -105,7 +104,7 @@ weight decay = 0.1  采用  cosine 学习率下降最低至1e-9.
 ChatML格式的tool calling, reasoning interleaved with coding (RICO) 策略进行， 这个值得细读(Internlm-math: Open math large language models
 toward verifiable reasoning)
 ## 验证分析
-测试分为了6个维度, 每个下面又有细分，更多的信息见opencompass(https://github.com/open-compass/opencompass)。 我个人最感兴真趣的是工具调用这部分。
+测试分为了6个维度, 每个下面又有细分，更多的信息见 [opencompass](https://github.com/open-compass/opencompass) 。 我个人最感兴真趣的是工具调用这部分。
 ### 综合测试
 ### 语言与知识
 ### 推理与数学
@@ -128,4 +127,4 @@ toward verifiable reasoning)
 报告花了很大报告花了很大的篇幅来讲数据的处理与训练的过程,指标等其他方面， 就对于我这样没法真正去训练模型的人是一个非常好的补充。 很多方面我缺乏实践的经验，所以也不好真正的做一个判断，但是这对于我开阔视野是有非常大的好处。
 整个书生模型最牛的一点就是他的体系完整可靠，从数据处理，预训练，对齐，微调，到部署测评啊，包括几个对其他模型的横向评比，和非深度和广度都非常的大。 全部开源做到非常难，因为其实能做到这么大工作量几乎都是大企业，有非常大的资金支持。
 接下来我的目标是基于InternLM2进行微调。所以,我要努力学习吧关于这个整个系统的体系。
-20b的模型从我的角度来讲进行全量训练也是不太可能，但是做微调是可以做到的。接下来我的工作重点会放在对微调技术的实战, 细读XTuner, 以及LMAgent部分。
+20b的模型从我的角度来讲进行全量训练也是不太可能，但是做微调是可以做到的。接下来我的工作重点会放在对微调技术的实战, 细读XTuner, 以及LAgent部分。
