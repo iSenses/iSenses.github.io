@@ -154,7 +154,10 @@ ln -s /root/share/new_models/Shanghai_AI_Laboratory/internlm-xcomposer2-7b /root
 ln -s /root/share/new_models/Shanghai_AI_Laboratory/internlm-xcomposer2-vl-7b /root/models/internlm-xcomposer2-vl-7b
 ```
 
-启动服务器上的灵笔
+### 2. 运行效果
+
+#### 灵笔之图文写作实战
+启用图文写作模型:internlm-xcomposer2-7b
 ```bash
 cd /root/demo/InternLM-XComposer
 python /root/demo/InternLM-XComposer/examples/gradio_demo_composition.py  \
@@ -168,4 +171,63 @@ python /root/demo/InternLM-XComposer/examples/gradio_demo_composition.py  \
 ```bash
 ssh -CNg -L 6006:127.0.0.1:6006 root@ssh.intern-ai.org.cn -p <port>
 ```
-### 2. 运行效果
+
+我让他写一篇“中国足球”相关的文章， 他的内容流畅并符合大众观感（具体历史有错误）。最让我惊喜的是配图，配图的选择与叙事感情匹配非常好。
+甚至包括历史上夺冠的东亚运动会， 这确实是快速生成热点文章的神器。
+
+<image src="img/soccer1.png"/>
+<br/>
+<image src="img/soccer2.png"/>
+<br/>
+<image src="img/soccer3.png"/>
+<br/>
+<image src="img/soccer3.png"/>
+<br/>
+
+相比之下要求它写“多模态发动机”相关的文章可读性就差一些，配图选择多样性很好，具有启发性。
+
+<image src="img/engine1.png"/>
+<br/>
+<image src="img/engine2.png"/>
+<br/>
+#### 灵笔之图片理解实战
+启用图片理解模型：internlm-xcomposer2-vl-7b
+```bash
+cd /root/demo/InternLM-XComposer
+python /root/demo/InternLM-XComposer/examples/gradio_demo_composition.py  \
+--code_path /root/models/internlm-xcomposer2-7b \
+--private \
+--num_gpus 1 \
+--port 6006
+```
+
+映射到本地端口
+```bash
+ssh -CNg -L 6006:127.0.0.1:6006 root@ssh.intern-ai.org.cn -p <port>
+```
+我上传了一张F-35的图片，问它具体的型号（调皮）， 它没有正确回答，但在我不断引导下还是给出了答案。
+
+<image src="img/plane1.png"/>
+<br/>
+<image src="img/plane2.png"/>
+<br/>
+<image src="img/plane3.png"/>
+<br/>
+
+"不知为不知"是一个好习惯
+
+<image src="img/giraffe.png"/>
+<br/>
+
+可贵的是这个对话模型确实有很强的沟通能力：
+
+<image src="img/cemetery1.png"/>
+<br/>
+
+<image src="img/cemetery2.png"/>
+<br/>
+
+## 总结
+有幸实践了四个InternLM 模型， 从小到大。对话模型（角色扮演）的效果很好， 就个人微调来说， 我很想知道具体的训练量要多大。 Lagent潜力不可限量，不同的domain knownledge将在它手发扬光大。 但最惊艳的还是灵笔模型， 生成文章的配图检索的很准确的， 文章本身也流畅, 与图片对话实用价值与娱乐价值都很大。希望能有更多的机会研究它们。
+
+
