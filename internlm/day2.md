@@ -181,7 +181,7 @@ ssh -CNg -L 6006:127.0.0.1:6006 root@ssh.intern-ai.org.cn -p <port>
 <br/>
 <image src="img/soccer3.png"/>
 <br/>
-<image src="img/soccer3.png"/>
+<image src="img/soccer4.png"/>
 <br/>
 
 相比之下要求它写“多模态发动机”相关的文章可读性就差一些，配图选择多样性很好，具有启发性。
@@ -221,10 +221,10 @@ ssh -CNg -L 6006:127.0.0.1:6006 root@ssh.intern-ai.org.cn -p <port>
 
 可贵的是这个对话模型确实有很强的沟通能力：
 
-<image src="img/cemetery1.png"/>
+<image src="img/cemetery2.png"/>
 <br/>
 
-<image src="img/cemetery2.png"/>
+<image src="img/cemetery1.png"/>
 <br/>
 
 ## 总结
