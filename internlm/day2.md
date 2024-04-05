@@ -108,4 +108,64 @@ ssh -CNg -L 6006:127.0.0.1:6006 root@ssh.intern-ai.org.cn -p 41488
 <br/>
 
 ## Demo 3 使用 Lagent 运行 InternLM2-Chat-7B 模型
+### 1. 环境配置
+因为继承了前面横型的部署环境， 部署步骤简单了许多：
+```bash
+cd /root/demo
+git clone https://gitee.com/internlm/lagent.git
+cd lagent && git checkout 581d9fb8987a5d9b72bb9ebd37a95efd47d479ac
+pip install -e .
+ln -s /root/share/new_models/Shanghai_AI_Laboratory/internlm2-chat-7b /root/models/internlm2-chat-7b
+```
+
+然后修改模型位置, streamlit启动
+```bash
+streamlit run /root/demo/lagent/examples/internlm2_agent_web_demo_hf.py --server.address 127.0.0.1 --server.port 6006
+```
+在本地机上端口映射：
+```bash
+ssh -CNg -L 6006:127.0.0.1:6006 root@ssh.intern-ai.org.cn -p 41501
+```
+### 2. 运行效果
+在尝试利用Lagent功能时， 需要选中“数据分析”， 实际可能还需要利用prompt提示：
+没有强调使用工具， 答案错误(虽然也选中“数据分析”)：
+<image src="img/lagent1.png"/>
+<br/>
+有要求使用sympy, 有代码且结果正确
+<image src="img/lagent2.png"/>
+<br/>
 ## Demo 4 实践部署 浦语·灵笔2 模型
+浦语·灵笔2 是基于 书生·浦语2 大语言模型研发的突破性的图文多模态大模型，具有非凡的图文写作和图像理解能力，在多种应用场景表现出色，总结起来其具有：
+
+自由指令输入的图文写作能力： 浦语·灵笔2 可以理解自由形式的图文指令输入，包括大纲、文章细节要求、参考图片等，为用户打造图文并貌的专属文章。
+具有海量图文知识，可以准确的回复各种图文问答难题，在识别、感知、细节描述、视觉推理等能力上表现惊人。
+浦语·灵笔2-7B 基于 书生·浦语2-7B 模型，在13项多模态评测中大幅领先同量级多模态模型，在其中6项评测中超过 GPT-4V 和 Gemini Pro。
+
+### 1. 环境配置
+```bash
+conda activate demo
+pip install timm==0.4.12 sentencepiece==0.1.99 markdown2==2.4.10 xlsxwriter==3.1.2 gradio==4.13.0 modelscope==1.9.5
+cd /root/demo
+git clone https://gitee.com/internlm/InternLM-XComposer.git
+# git clone https://github.com/internlm/InternLM-XComposer.git
+cd /root/demo/InternLM-XComposer
+git checkout f31220eddca2cf6246ee2ddf8e375a40457ff626
+ln -s /root/share/new_models/Shanghai_AI_Laboratory/internlm-xcomposer2-7b /root/models/internlm-xcomposer2-7b
+ln -s /root/share/new_models/Shanghai_AI_Laboratory/internlm-xcomposer2-vl-7b /root/models/internlm-xcomposer2-vl-7b
+```
+
+启动服务器上的灵笔
+```bash
+cd /root/demo/InternLM-XComposer
+python /root/demo/InternLM-XComposer/examples/gradio_demo_composition.py  \
+--code_path /root/models/internlm-xcomposer2-7b \
+--private \
+--num_gpus 1 \
+--port 6006
+```
+
+映射到本地端口
+```bash
+ssh -CNg -L 6006:127.0.0.1:6006 root@ssh.intern-ai.org.cn -p <port>
+```
+### 2. 运行效果
