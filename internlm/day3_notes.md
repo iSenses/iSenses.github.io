@@ -11,7 +11,6 @@ RAG模型主要由2部分组成，包括检索器与生成器。
 
 
 
-
 ### RAG vs. Fine-Tuning
 - RAG
   - No parameters change, 使用独立于深度模型的知识库
@@ -42,7 +41,15 @@ RAG模型主要由2部分组成，包括检索器与生成器。
 
 <image src="img/rag_optim.png"/>
 <br/>
-## huixiangdou实现architecture
+
+### RAG的可能缺陷
+- 检索结果的准确性与时效性
+- 检索过程带来的额外开销
+- 检索的知识与生成器的知识无法对齐带来回答质量下降
+- 检索知识占用Context过长导致生成内容不完整
+
+
+## huixiangdou实现
 huixiangdou 是一个开源RAG框架 [技术报告链接：Huixiangdou: Overcoming Group Chat Scenarios With LLM-Based Technical Assistance](https://arxiv.org/abs/2401.08772) [代码](https://github.com/InternLM/HuixiangDou)。
 huixiangdou 功能全面，尤其以一个群聊助手为主要应用场景， 是一个包含RAG与web端，Lark前端等功能， 不断进化的RAG应用。
 huixiangdou 从架构上说属于最成熟的Query-based RAG, huixiangdou 是通过将不通来源的service加入pipeline过滤后输入LLM进行生成的实现。
@@ -52,3 +59,25 @@ huixiangdou支持的外部知识来源包括：1. 向量数据库， 2. 网络�
 <image src="img/huixiangdou_arch.png"/>
 <br/>
 
+截至发文， huixiangdou已支持下面大模型直接加载
+- InternLM2
+- Qwen
+- KIMI
+- DeepSeek
+- ChatGLM (ZHIPU)
+- Xi-Api
+- OpenAOE
+支持下列文件格式作为输入
+- pdf
+- word
+- excel
+- ppt
+- html
+- markdown
+- txt
+同时有下述app接入支持
+- Web
+- Lark(飞书)
+- WeChat(非官)
+
+huixiangdou部署简单， 特别是可以直接通过 `resource/good_questions.json`, `resource/bad_questions.json`, 来控制其应答内容的范围是优秀的创新。
