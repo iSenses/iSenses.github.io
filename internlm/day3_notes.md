@@ -67,6 +67,8 @@ huixiangdou支持的外部知识来源包括：1. 向量数据库， 2. 网络�
 - ChatGLM (ZHIPU)
 - Xi-Api
 - OpenAOE
+
+
 支持下列文件格式作为输入
 - pdf
 - word
@@ -75,6 +77,8 @@ huixiangdou支持的外部知识来源包括：1. 向量数据库， 2. 网络�
 - html
 - markdown
 - txt
+
+
 同时有下述app接入支持
 - Web
 - Lark(飞书)
