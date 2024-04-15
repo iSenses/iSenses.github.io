@@ -80,4 +80,5 @@ huixiangdou支持的外部知识来源包括：1. 向量数据库， 2. 网络�
 - Lark(飞书)
 - WeChat(非官)
 
-huixiangdou部署简单， 特别是可以直接通过 `resource/good_questions.json`, `resource/bad_questions.json`, 来控制其应答内容的范围是优秀的创新。
+huixiangdou部署简单， 特别是建立有效的pipeline, 使得可以直接通过 `resource/good_questions.json`, `resource/bad_questions.json`的修改来控制其应答范围是非常成功的创新。
+理论部分先到这里，接下来转战huixiangdou实战篇 [day3 作业 huixiangdou 实战](https://isenses.github.io/internlm/day3_homework)。
