@@ -67,8 +67,11 @@ RAG模型主要由2部分组成，包括检索器与生成器。
 
 ## huixiangdou实现
 huixiangdou 是一个开源RAG框架 [技术报告链接](https://arxiv.org/abs/2401.08772)  [代码](https://github.com/InternLM/HuixiangDou) 。
+
 huixiangdou 功能全面，尤其以一个群聊助手为主要应用场景， 是一个包含RAG与web端，Lark前端等功能， 不断进化的RAG应用。
+
 huixiangdou 从架构上说属于最成熟的Query-based RAG, huixiangdou 是通过将不通来源的service加入pipeline过滤后输入LLM进行生成的实现。
+
 huixiangdou支持的外部知识来源包括：1. 向量数据库， 2. 网络搜索结果，3.知识图谱。
 经过Reject Pipeline的过滤, 包括对多 ground-truth like source的检索， 最终可以接入本地LLM模型生成也可以接入API, 生成答案， 返回群聊。
 
