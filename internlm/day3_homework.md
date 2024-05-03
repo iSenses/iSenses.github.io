@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Day3 - 作业：huixiangdou实战 "
+title: "Day3 - 作业：huixiangdou实战篇"
 ---
 
 # Day3 - 作业：huixiangdou实战
