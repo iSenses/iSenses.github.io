@@ -1,5 +1,8 @@
 # Day3 - 作业：huixiangdou实战
 
+
+[[TOC]] *
+
 ## 基础篇
 2.在 `InternLM Studio` 上部署茴香豆技术助手
 
@@ -198,11 +201,14 @@ You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast t
 
 1. 登录 [Serper](https://serper.dev/) ，注册：
 
-![](imgs/serper.png)
+![成功注册serper.dev](img/hxd_hw_serper_1.png)
 
 2. 进入 [Serper API](https://serper.dev/api-key) 界面，复制自己的 API-key：
 
-![](imgs/serper_api.png)
+![image]()
+得到搜索列表
+
+![从serper.dev中得到搜索结果](img/hxd_hw_serper_2.png)
 
 3. 替换 `/huixiangdou/config.ini` 中的 ***${YOUR-API-KEY}*** 为自己的API-key：
 
