@@ -3,12 +3,11 @@ layout: post
 title: "Day3 - 作业：huixiangdou实战篇"
 ---
 
-# Day3 - 作业：huixiangdou实战
 
 * TOC
 {:toc}
 
-## 基础篇
+# 基础篇
 2.在 `InternLM Studio` 上部署茴香豆技术助手
 
 - 根据教程文档搭建 `茴香豆技术助手`，针对问题"茴香豆怎么部署到微信群？"进行提问
@@ -233,8 +232,8 @@ save_dir = "logs/web_search_result"
 ![image](img/hxd_hw_lark_3.png)
 ![image](img/hxd_hw_lark_4.png)
 
-## 进阶篇
-### 拓展实践：为huixiangdou增加百度星河社区api调用
+# 进阶篇
+## 拓展实践：为huixiangdou增加百度星河社区api调用
 对huixiangdou进行探索实践中，发现其架构清晰，易于扩展，特别是基于远程大模型api，能够极大减少对客户机的要求，甚至在适配faiss-cpu后可以在无gpu情况下运行。
 为huixiangdou添加api后端百度星河社区aistudio（刚好新注册的API用不完）。
 
@@ -294,7 +293,7 @@ huixiangdou建立将会根据提供的`good_question`与`bad_question`列表 利
 
 
 
-### A.【应用方向】 结合自己擅长的领域知识（游戏、法律、电子等）、专业背景，搭建个人工作助手或者垂直领域问答助手，参考茴香豆官方文档，部署到下列任一平台。
+## A.【应用方向】 结合自己擅长的领域知识（游戏、法律、电子等）、专业背景，搭建个人工作助手或者垂直领域问答助手，参考茴香豆官方文档，部署到下列任一平台。
   - 飞书、微信
   - 可以使用 茴香豆 Web 版 或 InternLM Studio 云端服务器部署
   - 涵盖部署全过程的作业报告和个人助手问答截图
