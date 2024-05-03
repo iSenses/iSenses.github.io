@@ -1,3 +1,13 @@
+---
+layout: post
+title: "Day4 - Xtuner微调LLM实战"
+---
+
+* TOC
+{:toc}
+
+
+
 # 第 4 节课作业
 
 记录复现过程并截图

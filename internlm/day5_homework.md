@@ -1,3 +1,13 @@
+---
+layout: post
+title: "Day5 - LMDeploy课后作业"
+---
+
+
+* TOC
+{:toc}
+
+
 # 第五节课作业（请交到第5节课）
 
 ## 基础作业（结营必做）

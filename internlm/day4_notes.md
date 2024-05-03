@@ -1,5 +1,14 @@
-# Day4 - Xtuner微调LLM
+---
+layout: post
+title: "Day4 - Xtuner微调LLM"
+---
 
+
+* TOC
+{:toc}
+
+
+<img src="image.png" width="200" height="100">
 ## FineTuning 微调
 ### 指令跟随微调
 对话模板的构建
@@ -18,6 +27,31 @@ LoRA的发明， 源于对少量样本微调的有效性的探索性研究[Intri
 
 <image src="img/rag_optim.png"/>
 <br/>
+
+
+
+<image src="img/xt_01.png" width="200" height="150"/><br/>
+<image src="img/xt_02.png" width="200" height="150"/><br/>
+<image src="img/xt_03.png"/><br/>
+<image src="img/xt_04.png"/><br/>
+<image src="img/xt_05.png"/><br/>
+<image src="img/xt_06.png"/><br/>
+<image src="img/xt_07.png"/><br/>
+<image src="img/xt_08.png"/><br/>
+<image src="img/xt_09.png"/><br/>
+<image src="img/xt_10.png"/><br/>
+<image src="img/xt_11.png"/><br/>
+<image src="img/xt_12.png"/><br/>
+<image src="img/xt_13.png"/><br/>
+<image src="img/xt_14.png"/><br/>
+<image src="img/xt_15.png"/><br/>
+<image src="img/xt_16.png"/><br/>
+<image src="img/xt_17.png"/><br/>
+<image src="img/xt_18.png"/><br/>
+<image src="img/xt_19.png"/><br/>
+<image src="img/xt_20.png"/><br/>
+<image src="img/xt_21.png"/><br/>
+<image src="img/xt_22.png"/><br/>
 
 
 ## XTuner 实现

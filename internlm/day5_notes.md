@@ -1,4 +1,14 @@
-# Day5 LMDeploy 大模型部署工具
+---
+layout: post
+title: "Day5 LMDeploy 大模型部署工具"
+---
+
+
+* TOC
+{:toc}
+
+
+ 
 ## 大模型量化部署必要性
 - 模型巨大参数量
 - k/v cache缓存
@@ -100,3 +110,19 @@ from lmdeploy import ChatTemplateConfig, serve
 serve('internlm/internlm2-chat-7b', chat_template_config=ChatTemplateConfig.from_json('${JSON_FILE}'))
 ```
 
+
+
+<image src="img/lm_01.png"/><br/>
+<image src="img/lm_02.png"/><br/>
+<image src="img/lm_03.png"/><br/>
+<image src="img/lm_04.png"/><br/>
+<image src="img/lm_05.png"/><br/>
+<image src="img/lm_06.png"/><br/>
+<image src="img/lm_07.png"/><br/>
+<image src="img/lm_08.png"/><br/>
+<image src="img/lm_09.png"/><br/>
+<image src="img/lm_10.png"/><br/>
+<image src="img/lm_12.png"/><br/>
+<image src="img/lm_13.png"/><br/>
+<image src="img/lm_14.png"/><br/>
+<image src="img/lm_15.png"/><br/>
