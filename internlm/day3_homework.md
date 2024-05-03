@@ -1,7 +1,7 @@
 # Day3 - 作业：huixiangdou实战
 
 
-[[TOC]] *
+{% include toc.html html=text flat_toc=true %}
 
 ## 基础篇
 2.在 `InternLM Studio` 上部署茴香豆技术助手
