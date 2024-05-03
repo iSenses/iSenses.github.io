@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Day3 - 作业：huixiangdou实战 "
+categories: misc
 ---
 
 # Day3 - 作业：huixiangdou实战
