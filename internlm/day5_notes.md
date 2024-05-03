@@ -112,17 +112,17 @@ serve('internlm/internlm2-chat-7b', chat_template_config=ChatTemplateConfig.from
 
 
 
-<image src="img/lm_01.png"/><br/>
-<image src="img/lm_02.png"/><br/>
-<image src="img/lm_03.png"/><br/>
-<image src="img/lm_04.png"/><br/>
-<image src="img/lm_05.png"/><br/>
-<image src="img/lm_06.png"/><br/>
-<image src="img/lm_07.png"/><br/>
-<image src="img/lm_08.png"/><br/>
-<image src="img/lm_09.png"/><br/>
-<image src="img/lm_10.png"/><br/>
-<image src="img/lm_12.png"/><br/>
-<image src="img/lm_13.png"/><br/>
-<image src="img/lm_14.png"/><br/>
-<image src="img/lm_15.png"/><br/>
+<image src="img/lm_01.jpg"/><br/>
+<image src="img/lm_02.jpg"/><br/>
+<image src="img/lm_03.jpg"/><br/>
+<image src="img/lm_04.jpg"/><br/>
+<image src="img/lm_05.jpg"/><br/>
+<image src="img/lm_06.jpg"/><br/>
+<image src="img/lm_07.jpg"/><br/>
+<image src="img/lm_08.jpg"/><br/>
+<image src="img/lm_09.jpg"/><br/>
+<image src="img/lm_10.jpg"/><br/>
+<image src="img/lm_12.jpg"/><br/>
+<image src="img/lm_13.jpg"/><br/>
+<image src="img/lm_14.jpg"/><br/>
+<image src="img/lm_15.jpg"/><br/>

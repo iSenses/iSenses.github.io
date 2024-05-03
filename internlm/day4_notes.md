@@ -30,28 +30,28 @@ LoRA的发明， 源于对少量样本微调的有效性的探索性研究[Intri
 
 
 
-<image src="img/xt_01.png" width="200" height="150"/><br/>
-<image src="img/xt_02.png" width="200" height="150"/><br/>
-<image src="img/xt_03.png"/><br/>
-<image src="img/xt_04.png"/><br/>
-<image src="img/xt_05.png"/><br/>
-<image src="img/xt_06.png"/><br/>
-<image src="img/xt_07.png"/><br/>
-<image src="img/xt_08.png"/><br/>
-<image src="img/xt_09.png"/><br/>
-<image src="img/xt_10.png"/><br/>
-<image src="img/xt_11.png"/><br/>
-<image src="img/xt_12.png"/><br/>
-<image src="img/xt_13.png"/><br/>
-<image src="img/xt_14.png"/><br/>
-<image src="img/xt_15.png"/><br/>
-<image src="img/xt_16.png"/><br/>
-<image src="img/xt_17.png"/><br/>
-<image src="img/xt_18.png"/><br/>
-<image src="img/xt_19.png"/><br/>
-<image src="img/xt_20.png"/><br/>
-<image src="img/xt_21.png"/><br/>
-<image src="img/xt_22.png"/><br/>
+<image src="img/xt_01.jpg" width="200" height="150"/><br/>
+<image src="img/xt_02.jpg" width="200" height="150"/><br/>
+<image src="img/xt_03.jpg"/><br/>
+<image src="img/xt_04.jpg"/><br/>
+<image src="img/xt_05.jpg"/><br/>
+<image src="img/xt_06.jpg"/><br/>
+<image src="img/xt_07.jpg"/><br/>
+<image src="img/xt_08.jpg"/><br/>
+<image src="img/xt_09.jpg"/><br/>
+<image src="img/xt_10.jpg"/><br/>
+<image src="img/xt_11.jpg"/><br/>
+<image src="img/xt_12.jpg"/><br/>
+<image src="img/xt_13.jpg"/><br/>
+<image src="img/xt_14.jpg"/><br/>
+<image src="img/xt_15.jpg"/><br/>
+<image src="img/xt_16.jpg"/><br/>
+<image src="img/xt_17.jpg"/><br/>
+<image src="img/xt_18.jpg"/><br/>
+<image src="img/xt_19.jpg"/><br/>
+<image src="img/xt_20.jpg"/><br/>
+<image src="img/xt_21.jpg"/><br/>
+<image src="img/xt_22.jpg"/><br/>
 
 
 ## XTuner 实现
