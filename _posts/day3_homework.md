@@ -1,3 +1,9 @@
+---
+layout: post
+title: "Some articles are just so short that we have to make the footer stick"
+categories: misc
+---
+
 # Day3 - 作业：huixiangdou实战
 
 * TOC
