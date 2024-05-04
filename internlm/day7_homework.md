@@ -11,7 +11,7 @@ output: html_document
 
 ## 基础作业
 
-### 使用 OpenCompass 评测 internlm2-chat-1_8b 模型在 C-Eval 数据集上的性能
+### 使用 OpenCompass 评测 internlm2-chat-1_8b <br/> 模型在 C-Eval 数据集上的性能
 首先安装并激活环境，安装opencompass-0.2.4：  
 
 
