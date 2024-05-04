@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Day6 - Lagent  & AgentLego    
+title: "Day6 - Lagent  & AgentLego <br/>
   智能体应用搭建作业try  
   xxxxx"
 output: html_document
