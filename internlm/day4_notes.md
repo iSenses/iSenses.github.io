@@ -30,8 +30,8 @@ LoRA的发明， 源于对少量样本微调的有效性的探索性研究[Intri
 
 
 
-<image src="img/xt_01.jpg" width="45%" height="45%"/>
-<image src="img/xt_02.jpg" width="45%" height="45%"/><br/>
+<image src="img/xt_01.jpg" width="49%" height="49%"/>
+<image src="img/xt_02.jpg" width="49%" height="49%"/><br/>
 <image src="img/xt_03.jpg"/><br/>
 <image src="img/xt_04.jpg"/><br/>
 <image src="img/xt_05.jpg"/><br/>
