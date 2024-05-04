@@ -4,7 +4,7 @@ title: "Day7 - opencompass 作业实战"
 output: html_document
 ---
 
-<nav class="toc-fixed" markdown="1">
+<nav class="toc-fixed" markdown="3">
 * TOC
 {:toc}
 </nav>
@@ -77,7 +77,7 @@ python run.py --datasets ceval_gen --hf-path /share/new_models/Shanghai_AI_Labor
 
 ### 将自定义数据集提交至OpenCompass官网
 
-首先我找回之前收集的一些GQL查询例子的一个parquet，只有几十仅供演示。进行数据分割，写入`train.jsonl`, `dev.jsonl`, `test.jsonl`三个数据集
+首先我找回之前收集的一些GQL查询例子的一个parquet，只有几十个仅供演示。进行数据分割，写入`train.jsonl`, `dev.jsonl`, `test.jsonl`三个数据集
 ```python
 import pandas as pd
 import numpy as np
