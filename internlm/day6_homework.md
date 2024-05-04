@@ -4,8 +4,11 @@ title: |
     | Day6 - Lagent  & AgentLego 
 	| 智能体应用搭建作业
 output: html_document
-
 ---
+
+
+* TOC
+{:toc}
 
 
 ## 基础作业
