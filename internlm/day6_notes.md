@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Day6 Lagent & AgentLego 智能体应用搭建"
+title: "Day6 - Lagent 智能体应用搭建"
 ---
 
 
