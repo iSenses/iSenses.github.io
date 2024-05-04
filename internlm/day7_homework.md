@@ -4,7 +4,7 @@ title: "Day7 - opencompass 作业实战"
 output: html_document
 ---
 
-<nav class="toc-fixed" markdown="3">
+<nav class="toc-fixed" markdown="2">
 * TOC
 {:toc}
 </nav>
@@ -12,7 +12,7 @@ output: html_document
 ## 基础作业
 
 ### 使用 OpenCompass 评测 internlm2-chat-1_8b <br/> 模型在 C-Eval 数据集上的性能
-首先安装并激活环境，安装opencompass-0.2.4：  
+首先安装并激活环境，安装 opencompass-0.2.4：  
 
 
 ```shell
@@ -66,7 +66,7 @@ python run.py --datasets ceval_gen --hf-path /share/new_models/Shanghai_AI_Labor
 <br/>
 
 随手对`internlm-chat-7b` 用C-Eval数据集做一个测评， 方便与1.8b模型对比，发现这个7b模型accuracy比1.8b略差（见下图），其 naive_average 为44.16， 小于 `internlm2-chat-1_8b`的46.04， 怎么模型大了分值还小了呢？是我做错了吗？  
-我核查了predictions文件夹里的结果， 发现结果确实如此。再仔细对比， 才意识到7b是interlm第一版本， 而1.8b是internlm2了，原来1.8b已经在ceval上略超了上一版的7b了， 大佬们真是太给力了！！  
+我核查了predictions文件夹里的结果， 发现结果确实如此。再仔细对比， 才意识到我用的7b是internlm第一版本， 而1.8b是internlm2了，原来1.8b已经在ceval上略超了上一版的7b了， 大佬们真是太给力了！！  
 
 <image src="img/op_hw_comp.png" width="960"/>
 <br/>
