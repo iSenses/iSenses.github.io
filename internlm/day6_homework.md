@@ -1,8 +1,10 @@
 ---
 layout: post
-title:     | 
+title: | 
     | Day6 - Lagent  & AgentLego 
 	| 智能体应用搭建作业
+output: html_document
+
 ---
 
 
