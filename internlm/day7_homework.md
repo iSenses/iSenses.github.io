@@ -5,7 +5,7 @@ output: html_document
 ---
 
 * TOC
-{:toc}
+{:toc-fixed}
 
 
 ## 基础作业
@@ -72,7 +72,7 @@ python run.py --datasets ceval_gen --hf-path /share/new_models/Shanghai_AI_Labor
 
 
 
-### 进阶作业
+## 进阶作业
 
 - 将自定义数据集提交至OpenCompass官网
 
