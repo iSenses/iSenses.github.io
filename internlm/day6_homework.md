@@ -1,8 +1,8 @@
 ---
 layout: post
-title: |    
-  Day6 - Lagent  & AgentLego    
-  智能体应用搭建作业try  <br/>
+title: "Day6 - Lagent  & AgentLego    
+  智能体应用搭建作业try  
+  xxxxx"
 output: html_document
 ---
 
@@ -11,7 +11,7 @@ output: html_document
 {:toc}
 
 
-## 基础作业6
+## 基础作业7
 
 1. 完成 Lagent Web Demo 使用，并在作业中上传截图。文档可见 [Lagent Web Demo](lagent.md#1-lagent-web-demo)
 2. 完成 AgentLego 直接使用部分，并在作业中上传截图。文档可见 [直接使用 AgentLego](agentlego.md#1-直接使用-agentlego)。    
