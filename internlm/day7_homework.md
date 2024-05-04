@@ -11,7 +11,7 @@ output: html_document
 
 ## 基础作业
 
-- 使用 OpenCompass 评测 internlm2-chat-1_8b 模型在 C-Eval 数据集上的性能
+### 使用 OpenCompass 评测 internlm2-chat-1_8b 模型在 C-Eval 数据集上的性能
 首先安装并激活环境，安装opencompass-0.2.4：  
 
 
@@ -75,13 +75,32 @@ python run.py --datasets ceval_gen --hf-path /share/new_models/Shanghai_AI_Labor
 
 ## 进阶作业
 
-- 将自定义数据集提交至OpenCompass官网
+### 将自定义数据集提交至OpenCompass官网
 
-提交地址：https://hub.opencompass.org.cn/dataset-submit?lang=[object%20Object]  
-提交指南：https://mp.weixin.qq.com/s/_s0a9nYRye0bmqVdwXRVCg  
-Tips：不强制要求配置数据集对应榜单（ leaderboard.xlsx ），可仅上传 EADME_OPENCOMPASS.md 文档  
-TODO:  
-1. 启动OpenCompass的评测
-2. opencompass代码的运行逻辑
-3. 实现一个自定义的数据集, 并评测
-4. 其他功能
+首先我找回之前收集的一些GQL查询例子的一个parquet，只有几十仅供演示。进行数据分割，写入`train.jsonl`, `dev.jsonl`, `test.jsonl`三个数据集
+```python
+import pandas as pd
+import numpy as np
+
+df = pd.read_parquet("G:/InternLM_Course/train-00000-of-00001.parquet")
+train , validate, test = np.split(df.sample(frac=1), [int(.6*len(df)), int(.8*len(df))])
+with open("G:/InternLM_Course/op_gql_tiny_data/train.jsonl", "a") as f:
+     test.to_json(f, orient='records', lines=True)
+with open("G:/InternLM_Course/op_gql_tiny_data/dev.jsonl", "a") as f:
+     validate.to_json(f, orient='records', lines=True)
+with open("G:/InternLM_Course/op_gql_tiny_data/test.jsonl", "a") as f:
+     test.to_json(f, orient='records', lines=True)
+
+```
+
+数据集需要有下载地址， 因为我这只是个玩具数据集， 就仅放到自己的github上了[op_gql_tiny_data](https://github.com/iSenses/op_gql_tiny_data)  
+接下来就是根据[OpenCompass平台指引 | 贡献数据集](https://mp.weixin.qq.com/s/_s0a9nYRye0bmqVdwXRVCg)填写`README_OPENCOMPASS.md`   
+最后上传： https://hub.opencompass.org.cn/dataset-submit?lang=[object%20Object]
+
+[提交后数据集的链接](https://hub.opencompass.org.cn/dataset-detail/GQL_tiny)
+
+
+<image src="img/op_hw_GQL.png" width="960"/>
+<br/>
+
+完结撒花~  
