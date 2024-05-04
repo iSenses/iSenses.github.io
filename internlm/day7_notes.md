@@ -65,3 +65,24 @@ https://github.com/open-compass
 
 <image src="img/op_code2.png"/>
 <br/>
+
+Partitioners Runners openicl Summarizer
+
+```python
+ceval_datasets.append(
+	dict(
+		type=CEvalEvent,
+		path="./data/ceval/formal_ceval",
+		name=_name,
+		abbr="eval-" + _name if _split == "val" else "ceval-test-" + _name,
+		reader_cfg=dict(
+			input_columns = ["question", "A", "B", "C", "D"],
+			output_column = "answer",
+			train_split = "dev",
+			test_split = _split),
+		infer_cfg = ceval_infer_cfg,
+		eval_cfg = ceval_eval_cfg,
+	)
+)
+
+```

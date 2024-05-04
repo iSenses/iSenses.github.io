@@ -12,17 +12,41 @@ output: html_document
 ## 基础作业7
 
 1. 完成 Lagent Web Demo 使用，并在作业中上传截图。文档可见 [Lagent Web Demo](lagent.md#1-lagent-web-demo)
+ag_hw_arxiv_1.png
+ag_hw_arxiv_1.png
+
+```bash
+conda activate agent
+lmdeploy serve api_server /root/share/new_models/Shanghai_AI_Laboratory/internlm2-chat-7b \
+                            --server-name 127.0.0.1 \
+                            --model-name internlm2-chat-7b \
+                            --cache-max-entry-count 0.1
+```
+
 2. 完成 AgentLego 直接使用部分，并在作业中上传截图。文档可见 [直接使用 AgentLego](agentlego.md#1-直接使用-agentlego)。    
 
-
+ag_hw_road_1.jpg
+ag_hw_road_2.jpg
 
    
 ## 进阶作业
 
 1. 完成 AgentLego WebUI 使用，并在作业中上传截图。文档可见 [AgentLego WebUI](agentlego.md#2-作为智能体工具使用)。
+
+ag_hw_ObjectDetection_0.png
+ag_hw_ObjectDetection_1.png
+ag_hw_ObjectDetection_2.png
+ag_hw_ObjectDetection_3.png
+
 2. 使用 Lagent 或 AgentLego 实现自定义工具并完成调用，并在作业中上传截图。文档可见：
    - [用 Lagent 自定义工具](lagent.md#2-用-lagent-自定义工具)
    - [用 AgentLego 自定义工具](agentlego.md#3-用-agentlego-自定义工具)
+
+ag_hw_weather_1.png
+ag_hw_weather_2.png
+
+ag_hw_magic_1.png
+ag_hw_magic_2.png
 
 ## 大作业选题
 
