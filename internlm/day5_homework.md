@@ -3,10 +3,10 @@ layout: post
 title: "Day5 - LMDeploy课后作业"
 ---
 
-
+<nav class="toc-fixed" markdown="1">
 * TOC
 {:toc}
-
+</nav>
 
 # 第五节课作业（请交到第5节课）
 

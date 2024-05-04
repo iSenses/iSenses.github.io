@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Day7 opencompass 作业实战"
+title: "Day7 - opencompass 作业实战"
 output: html_document
 ---
 

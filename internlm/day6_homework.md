@@ -5,9 +5,10 @@ title: "Day6 - Lagent  & AgentLego <br/>
 output: html_document
 ---
 
+<nav class="toc-fixed" markdown="1">
 * TOC
 {:toc}
-
+</nav>
 
 ## 基础作业7
 

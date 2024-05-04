@@ -3,10 +3,10 @@ layout: post
 title: "Day4 - Xtuner微调LLM实战"
 ---
 
+<nav class="toc-fixed" markdown="1">
 * TOC
 {:toc}
-
-
+</nav>
 
 # 第 4 节课作业
 

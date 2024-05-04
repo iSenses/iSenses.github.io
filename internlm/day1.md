@@ -1,4 +1,13 @@
-# InternLM 第一节课后笔记
+---
+layout: post
+title: "InternLM 第一节课后笔记"
+---
+
+<nav class="toc-fixed" markdown="1">
+* TOC
+{:toc}
+</nav>
+
 
 ## InternLM开放全体系
 

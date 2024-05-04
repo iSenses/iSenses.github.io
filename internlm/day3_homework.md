@@ -3,9 +3,10 @@ layout: post
 title: "Day3 - 作业：huixiangdou实战篇"
 ---
 
-
+<nav class="toc-fixed" markdown="1">
 * TOC
 {:toc}
+</nav>
 
 # 基础篇
 ## 2.在 `InternLM Studio` 上部署茴香豆技术助手

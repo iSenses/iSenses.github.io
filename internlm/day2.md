@@ -1,6 +1,18 @@
-# Day2 InternLM2 Demo && Homework
+---
+layout: post
+title: "Day2 InternLM2 Demo && Homework"
+---
+
+<nav class="toc-fixed" markdown="1">
+* TOC
+{:toc}
+</nav>
+
 ## Demo1 部署 InternLM2-Chat-1.8B 模型进行智能对话
 ### 1. 创建开发机 CUDA-11.7 conda
+
+
+
 
 ```bash
 studio-conda -o internlm-base -t demo
