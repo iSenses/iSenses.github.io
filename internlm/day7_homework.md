@@ -9,9 +9,9 @@ output: html_document
 {:toc}
 </nav>
 
-## 基础作业
+# 基础作业
 
-### 使用 OpenCompass 评测 internlm2-chat-1_8b <br/> 模型在 C-Eval 数据集上的性能
+## 使用 OpenCompass 评测 internlm2-chat-1_8b <br/> 模型在 C-Eval 数据集上的性能
 首先安装并激活环境，安装 opencompass-0.2.4：  
 
 
@@ -73,9 +73,9 @@ python run.py --datasets ceval_gen --hf-path /share/new_models/Shanghai_AI_Labor
 
 
 
-## 进阶作业
+# 进阶作业
 
-### 将自定义数据集提交至OpenCompass官网
+## 将自定义数据集提交至OpenCompass官网
 
 首先我找回之前收集的一些GQL查询例子的一个parquet，只有几十个仅供演示。进行数据分割，写入`train.jsonl`, `dev.jsonl`, `test.jsonl`三个数据集
 ```python
