@@ -8,8 +8,8 @@ title: "Day3 - 作业：huixiangdou实战篇"
 {:toc}
 </nav>
 
-# 基础篇
-## 2.在 `InternLM Studio` 上部署茴香豆技术助手
+##  基础篇
+###  2.在 `InternLM Studio` 上部署茴香豆技术助手
 
 - 根据教程文档搭建 `茴香豆技术助手`，针对问题"茴香豆怎么部署到微信群？"进行提问
 - 完成不少于 400 字的笔记 + 截图
@@ -46,7 +46,7 @@ git checkout 63f2eef0e6e4ac113b05ede0316b193948a42cda
 BCE官方的推荐过滤阈值0.35或0.4, 但在本次实践中太高， 我修改系数0.22过滤出有效的答案。
 
 
-## 配置huixiangdou RAG助手
+### 配置huixiangdou RAG助手
 通过`sed`修改模型路径
 ```bash
 sed -i '6s#.*#embedding_model_path = "/root/models/bce-embedding-base_v1"#' /root/demo/huixiangdou/config.ini
@@ -233,8 +233,8 @@ save_dir = "logs/web_search_result"
 ![image](img/hxd_hw_lark_3.png)
 ![image](img/hxd_hw_lark_4.png)
 
-# 进阶篇
-## 拓展实践：为huixiangdou增加百度星河社区api调用
+## 进阶篇
+### 拓展实践：为huixiangdou增加百度星河社区api调用
 对huixiangdou进行探索实践中，发现其架构清晰，易于扩展，特别是基于远程大模型api，能够极大减少对客户机的要求，甚至在适配faiss-cpu后可以在无gpu情况下运行。
 为huixiangdou添加api后端百度星河社区aistudio（刚好新注册的API用不完）。
 
@@ -294,3 +294,4 @@ huixiangdou建立将会根据提供的`good_question`与`bad_question`列表 利
 
 
 
+### 完结撒花
