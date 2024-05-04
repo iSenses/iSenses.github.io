@@ -4,9 +4,10 @@ title: "Day7 opencompass 作业实战"
 output: html_document
 ---
 
+<nav class="toc-fixed" markdown="1">
 * TOC
-{:toc-fixed}
-
+{:toc}
+</nav>
 
 ## 基础作业
 
