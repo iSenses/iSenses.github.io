@@ -11,7 +11,7 @@ title: "Day4 - Xtuner微调LLM实战"
 ## 基础作业
 ### 训练自己的小助手认知
 
-
+环境搭建， 利用`studio-conda`构建环境，然后从源码安装`xtuner==0.1.17`。
 ```shell
 studio-conda xtuner0.1.17
 conda activate xtuner0.1.17
