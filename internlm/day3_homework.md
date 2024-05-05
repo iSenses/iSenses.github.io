@@ -9,13 +9,12 @@ title: "Day3 - 作业：huixiangdou实战篇"
 </nav>
 
 ##  基础篇
-###  2.在 `InternLM Studio` 上部署茴香豆技术助手
+###  在 `InternLM Studio` 上部署茴香豆技术助手
 
 - 根据教程文档搭建 `茴香豆技术助手`，针对问题"茴香豆怎么部署到微信群？"进行提问
 - 完成不少于 400 字的笔记 + 截图
 
-
-
+首先创建开发环境，登录https://studio.intern-ai.org.cn/, 创建30%A100的已装CUDA11.7的开发机  
 进入开发机后，从官方环境复制运行 InternLM 的基础环境，命名为 `InternLM2_Huixiangdou`，在命令行模式下运行：
 
 ```bash
@@ -128,7 +127,7 @@ python3 -m huixiangdou.main --standalone
 
 ```
 
-```bash
+```console
 2024-04-18 10:07:24.588 | INFO     | huixiangdou.service.llm_server_hybrid:generate_response:519 - ('“huixiangdou 是什么？”\n请仔细阅读以上内容，判断句子是否是个有主题的疑问句，结果用 0～10 表示。直接提供得分不要解释。\n判断标准：有主语谓语宾语并且是疑问句得 10 分；缺少主谓宾扣分；陈述句直接得 0 分；不是疑问句直接得 0 分。直接提供得分不要解释。', '根据您提供的内容，我无法判断"huixiangdou 是什么？" 这个句子的主题，因为它不包含任何有关于主题的信息。所以，我无法给出 0～10 的分数。请提供更具体的信息，以便我能够更准确地评估。')
 2024-04-18 10:07:24.588 | DEBUG    | huixiangdou.service.llm_server_hybrid:generate_response:522 - Q:有主题的疑问句，结果用 0～10 表示。直接提供得分不要解释。
 判断标准：有主语谓语宾语并且是疑问句得 10 分；缺少主谓宾扣分；陈述句直接得 0 分；不是疑问句直接得 0 分。直接提供得分不要解释 A:根据您提供的内容，我无法判断"huixiangdou 是什么？" 这个句子的主题，因为它不包含任何有关于主题的信息。所以，我无法给出 0～10 的分数。请提供更具体的信息，以便我能够更准确地评估。                  remote local timecost 7.615493535995483 
@@ -188,52 +187,119 @@ You're using a XLMRobertaTokenizerFast tokenizer. Please note that with a fast t
 (Press CTRL+C to quit)
 ```
 
+我们可以看到， 对huixiangdou微信部署, 如何部署到飞书这样的问题， 得到的答案， 包括将知识库内容传入大模型， 得到最相关的资料与生成的回答。
+
+
+<image src="img/hxd_hw_success_1.png" width="960"/>
+<br/>
+
+而对于“今天天气怎么样？”“你最喜欢什么样的颜色1”这样的问题， 系统判断`ErrorCode.Unrelated`, 不再向下运行，没有后面的检索与生成， 节约了资源。  
+<image src="img/hxd_hw_unrelated_1.png" width="960"/>
+<br/>
 
 
 
-![image](img/hxd_hw_success_1.png)
-![image](img/hxd_hw_unrelated_1.png)
+### 调试
+huixiangdou系统将会根据提供的`good_question`与`bad_question`列表 利用 `sklearn.metrics.precision_recall_curve` 函数计算更新 `reject_throttle` 。 但是我在调试过程中发现其值可能过高造成好问题被拒绝，我采用临时手动修改`config.ini`的方式修改feature_store下的`reject_throttle`阈值，将其改小为约0.618倍增加了其对相关问题的敏感度。这种情况可以临时使用，但是正道还提供更具有代表性的问题或者更合适地修改`reject_throttle`的算法。
 
-![image](img/hxd_hw_serper_1.png)
-![image](img/hxd_hw_serper_2.png)
+```bash
+[feature_store]
+reject_throttle = 0.22
+```
 
 
-### 3.1 加入网络搜索
+### 加入网络搜索
 
 茴香豆除了可以从本地向量数据库中检索内容进行回答，也可以加入网络的搜索结果，生成回答。 
 
-开启网络搜索功能需要用到 **Serper** 提供的 API：
+开启网络搜索功能需要用到 **Serper.dev** 提供的 API：
 
 1. 登录 [Serper](https://serper.dev/) ，注册：
 
-![成功注册serper.dev](img/hxd_hw_serper_1.png)
+<image src="img/hxd_hw_serper_1.png" width="960"/>
+<br/>
 
 2. 进入 [Serper API](https://serper.dev/api-key) 界面，复制自己的 API-key：
 
-![image]()
-得到搜索列表
-
-![从serper.dev中得到搜索结果](img/hxd_hw_serper_2.png)
-
-3. 替换 `/huixiangdou/config.ini` 中的 ***${YOUR-API-KEY}*** 为自己的API-key：
-
-```
+在`config.ini`中进行修改
+```shell
 [web_search]
-# check https://serper.dev/api-key to get a free API key
-x_api_key = "${YOUR-API-KEY}"
-domain_partial_order = ["openai.com", "pytorch.org", "readthedocs.io", "nvidia.com", "stackoverflow.com", "juejin.cn", "zhuanlan.zhihu.com", "www.cnblogs.com"]
+x_api_key = <粘贴API-key>
+domain_partial_order = ["openai.com", "pytorch.org", "readthedocs.io", "nvidia.com", "stackoverflow.com", "stackexchange.com", "juejin.cn", "zhuanlan.zhihu.com", "www.cnblogs.com"]
 save_dir = "logs/web_search_result"
 ```
-其中 `domain_partial_order` 可以设置网络搜索的范围。
+同时我还修改了 `domain_partial_order` 设置网络搜索的范围， 增加了"stackexchange.com"等。
 
-
-
-![image](img/hxd_hw_lark_1.png)
-![image](img/hxd_hw_lark_2.png)
-![image](img/hxd_hw_lark_3.png)
-![image](img/hxd_hw_lark_4.png)
+可以看到，查询`huixiandou如何部署到飞书`这个问题时启用了搜索，从serper.dev中返回了多个网站的结果，用于生成最后的答案。
+<image src="img/hxd_hw_serper_2.png" width="960"/>
+<br/>
 
 ## 进阶篇
+### 拓展作业：将huixiangdou部署到飞书
+1. 创建测试企业
+创建测试企业并添加应用能力`机器人`。
+
+<image src="img/hxd_hw_lark_5.png" width="480"/>
+<image src="img/hxd_hw_lark_6.png" width="480"/>
+<br/>
+2. 配置机器人权限
+
+至关重要的一步， 决定机器人能否“看到”与“说出”。
+挨个添加，在测试企业中，添加权限不需要审批，一定会通过。
+```
+* 读取群消息
+* 获取群组信息
+* 获取与发送单聊、群组消息
+* 接收群聊@机器人消息事件
+* 获取群组中所有消息
+* 获取用户发给机器人的单聊消息
+* 获取单聊、群组消息
+* 以应用的身份发消息
+```
+
+3. 配置服务器
+
+安装redis
+```shell
+sudo apt install redis-server
+redis-server
+```
+运行后redis将绑定在6379端口。  
+保持redis活跃， 新建终端运行`huixiangdou.fontend.lark_group`
+
+```shell
+cd huixiangdou
+python3 -m pip install -r requirements-lark-group.txt
+python3 -m huixiangdou.frontend.lark_group
+```
+
+返回
+```console
+* Running on all addresses (0.0.0.0)
+* Running on http://127.0.0.1:6666
+* Running on http://101.133.161.20:6666
+Press CTRL+C to quit
+```
+
+4. 配置验证事件与回调
+在事件与回调中按造服务器地址配置事件与回调， 并挨个验证
+
+**注意** 在验证回调配置对应 `/fetch`这个endpoint时， 应先将原代码注释， 将`event` endpoint下的代码复制到其下运行，之后修改验证`回调配置`， 成功之后再改回原代码。
+
+
+<image src="img/hxd_hw_lark_1.png" width="960"/>
+<br/>
+
+<image src="img/hxd_hw_lark_2.png" width="960"/>
+<br/>
+
+<image src="img/hxd_hw_lark_3.png" width="960"/>
+<br/>
+
+<image src="img/hxd_hw_lark_4.png" width="960"/>
+<br/>
+
+成功反应我提出的问题， 有点小激动！！
 ### 拓展实践：为huixiangdou增加百度星河社区api调用
 对huixiangdou进行探索实践中，发现其架构清晰，易于扩展，特别是基于远程大模型api，能够极大减少对客户机的要求，甚至在适配faiss-cpu后可以在无gpu情况下运行。
 为huixiangdou添加api后端百度星河社区aistudio（刚好新注册的API用不完）。
@@ -288,10 +354,5 @@ def generate_response(self, prompt, history=[], backend='remote'):
 ```
 
 
-service/retriever
-huixiangdou建立将会根据提供的`good_question`与`bad_question`列表 利用 `sklearn.metrics.precision_recall_curve` 函数计算更新 `reject_throttle` 。 但是我在调试过程中发现其值可能过高造成好问题被拒绝，我采用临时手动修改`config.ini`的方式修改feature_store下的`reject_throttle`阈值，将其改小为约0.618倍增加了其对相关问题的敏感度。这种情况可以临时使用，但是正道还提供更具有代表性的问题或者更合适地修改`reject_throttle`的算法。
 
 
-
-
-### 完结撒花
