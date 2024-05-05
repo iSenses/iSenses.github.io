@@ -304,7 +304,7 @@ Press CTRL+C to quit
 对huixiangdou进行探索实践中，发现其架构清晰，易于扩展，特别是基于远程大模型api，能够极大减少对客户机的要求，甚至在适配faiss-cpu后可以在无gpu情况下运行。
 为huixiangdou添加api后端百度星河社区aistudio（刚好新注册的API用不完）。
 
-在 huixiangdou/service/llm_server_hybrid.py 的HybridLLMServer类中添加函数
+在 `huixiangdou/service/llm_server_hybrid.py` 的`HybridLLMServer`类中添加函数
 ```python
 def call_aistudio(self, prompt, history):
 	"""Generate a response from aistudio erniebot-sdk
@@ -344,8 +344,8 @@ def call_aistudio(self, prompt, history):
 	return text
 ```
 
-修改
-```
+修改`generate_response`函数增加`backend`分支
+```python
 def generate_response(self, prompt, history=[], backend='remote'):
 	...
 	
@@ -355,4 +355,24 @@ def generate_response(self, prompt, history=[], backend='remote'):
 
 
 
+最后修改config.ini，
+```ini
+[llm]
+enable_local = 0
+enable_remote = 1
+
+[llm.server]
+remote_type = "aistudio"
+remote_api_key = "2e0009a4cf5ca6d63ab9374046ff9613071d9391"
+```
+
+配置这个后端要安装`erniebot`
+```shell
+pip install erniebot
+```
+
+成功调用aistudio后端：
+
+<image src="img/hxd_hw_ernie.png" width="960"/>
+<br/>
 
