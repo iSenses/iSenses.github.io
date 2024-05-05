@@ -3,9 +3,10 @@ layout: post
 title: "Day6 - Lagent 智能体应用搭建"
 ---
 
-
+<nav class="toc-fixed" markdown="1">
 * TOC
 {:toc}
+</nav>
 
 
 ## 智能体(Agent)理论
@@ -46,7 +47,7 @@ Lagent 结构如下图所示：
 ![image](img/ag_struct.png)
 
 ## AgentLego
-AgentLego是一个多模态工具包， 可以集成到 Lagent, Transformer Agents  VisualChatGPT中， 当前集成功能已经包括：
+[AgentLego](https://github.com/InternLM/agentlego)是一个开源多模态工具包， 可以集成到 Lagent, Transformer Agents  VisualChatGPT中， 当前集成功能已经包括：
 
 - 通用能力
 	- [Calculator](https://github.com/InternLM/agentlego/tree/main/agentlego/tools/calculator/README.md): 使用 Python 解释器进行计算

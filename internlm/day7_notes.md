@@ -15,9 +15,9 @@ output: html_document
 - 数据污染
 - 鲁棒性
 
-<image src="img/op_challenge.png"/>
+<image src="img/op_challenge.png" width="960"/>
 <br/>
-<image src="img/op_comps.png"/>
+<image src="img/op_comps.png" width="960"/>
 <br/>
 
 `OpenCompass`是目前唯一获得Meta官方推荐的国产大模型评测体系, 包含100+评测集， 50万+题目(竞品LM Evaluation, Harness(HF Leaderboard), HELM, BIG-bench)
@@ -42,7 +42,7 @@ output: html_document
 https://hub.opencompass.org.cn/home
 包括各种测试标准， 方法， 数据集
 
-<image src="img/op_comps.png"/>
+<image src="img/op_comps.png" width="960"/>
 <br/>
 ### CompassRank
 https://rank.opencompass.org.cn/home
@@ -58,22 +58,22 @@ https://github.com/open-compass
 - 长文本1M长度多种评测基准
 - 主观， 打分， 模型对战等多种能力， 可切换上百种评价模型
 
-<image src="img/op_pipeline.png"/>
+<image src="img/op_pipeline.png" width="960"/>
 <br/>
-<image src="img/op_tools.png"/>
+<image src="img/op_tools.png" width="960"/>
 <br/>
 各种能力维度全面测试
 
-<image src="img/op_caps.png"/>
+<image src="img/op_caps.png" width="960"/>
 <br/>
-<image src="img/op_datasets.png"/>
+<image src="img/op_datasets.png" width="960"/>
 <br/>
 ### 代码结构分析
 
-<image src="img/op_code1.png"/>
+<image src="img/op_code1.png" width="960"/>
 <br/>
 
-<image src="img/op_code2.png"/>
+<image src="img/op_code2.png" width="960"/>
 <br/>
 
 Partitioners Runners openicl Summarizer
