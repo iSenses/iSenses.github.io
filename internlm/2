@@ -9,13 +9,6 @@ title: "Day4 - Xtuner微调LLM课程笔记"
 </nav>
 
 ## FineTuning 微调
-<image src="img/xt_01.jpg" width="478"/>
-<image src="img/xt_02.jpg" width="478" /><br/>
-
-
-<image src="img/xt_03.jpg" width="478" />
-<image src="img/xt_04.jpg" width="478" /><br/>
-
 ### 指令跟随微调
 对话模板的构建
 System(<|System|>), User(<|User|>, <eoh>), Assistant(<|Bot|>, <eoa>)
@@ -34,8 +27,11 @@ LoRA的发明， 源于对少量样本微调的有效性的探索性研究[Intri
 <br/>
 
 
-## XTuner实现
 
+<image src="img/xt_01.jpg" width="49%" height="49%"/>
+<image src="img/xt_02.jpg" width="49%" height="49%"/><br/>
+<image src="img/xt_03.jpg"/><br/>
+<image src="img/xt_04.jpg"/><br/>
 <image src="img/xt_07.jpg"/><br/>
 <image src="img/xt_08.jpg"/><br/>
 <image src="img/xt_09.jpg"/><br/>
@@ -54,3 +50,4 @@ LoRA的发明， 源于对少量样本微调的有效性的探索性研究[Intri
 <image src="img/xt_22.jpg"/><br/>
 
 
+## XTuner 实现
