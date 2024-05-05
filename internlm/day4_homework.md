@@ -44,5 +44,14 @@ demo/xtuner0117/llava/work_dirs/internlm2_chat_1_8b_llava_tutorial_config/iter_1
 ![image](img/xt_homework3.png)
 ![image](img/xt_homework4.png)
 ![image](img/xt_homework5.png)
+
 ## 进阶作业1： 上传认知模型到OpenXLab
+[gradio_assistant_internlm2](https://openxlab.org.cn/apps/detail/mingyanglee/gradio_assistant_internlm2)
 ## 进阶作业2： 复现多模态微调
+
+
+<image src="img/xt_homework_llava_1.png" width="960"/>
+<br/>
+
+<image src="img/xt_homework_llava_2.png" width="960"/>
+<br/>

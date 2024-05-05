@@ -234,8 +234,8 @@ save_dir = "logs/web_search_result"
 <image src="img/hxd_hw_serper_2.png" width="960"/>
 <br/>
 
-## 进阶篇
-### 拓展作业：将huixiangdou部署到飞书
+## 进阶作业
+### 应用方向：将huixiangdou部署到飞书
 1. 创建测试企业
 创建测试企业并添加应用能力`机器人`。
 
@@ -299,8 +299,9 @@ Press CTRL+C to quit
 <image src="img/hxd_hw_lark_4.png" width="960"/>
 <br/>
 
-成功反应我提出的问题， 有点小激动！！
-### 拓展实践：为huixiangdou增加百度星河社区api调用
+成功回应我提出的问题， 有点小激动！！
+
+### 应用拓展：为huixiangdou增加百度星河社区api调用
 对huixiangdou进行探索实践中，发现其架构清晰，易于扩展，特别是基于远程大模型api，能够极大减少对客户机的要求，甚至在适配faiss-cpu后可以在无gpu情况下运行。
 为huixiangdou添加api后端百度星河社区aistudio（刚好新注册的API用不完）。
 

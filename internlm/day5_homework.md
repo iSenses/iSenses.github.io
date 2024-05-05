@@ -16,6 +16,9 @@ title: "Day5 - LMDeploy课后作业"
 - 下载internlm-chat-1.8b模型
 - 以命令行方式与模型对话
 
+<image src="img/lm_llava_cmd.png" width="960"/> <br/>
+<image src="img/lm_llava_cmd2.png" width="960"/> <br/>
+
 ## 进阶作业
 
 完成以下任务，并将实现过程记录截图：
@@ -36,6 +39,15 @@ lmdeploy serve api_server \
 - 使用 LMDeploy 运行视觉多模态大模型 llava gradio demo （优秀学员必做）
 - 将 LMDeploy Web Demo 部署到 [OpenXLab](../tools/openxlab-deploy/) （OpenXLab cuda 12.2 的镜像还没有 ready，可先跳过，一周之后再来做）
 
+<image src="img/lm_FastAPI.png" width="960"/> <br/>
+<image src="img/lm_gradio.png" width="960"/> <br/>
+<image src="img/lm_gradio_2.png" width="960"/> <br/>
+<image src="img/lm_interlm2_1_8_4bits_cache-max-entry-count_0.1.png" width="960"/> <br/>
+<image src="img/lm_interlm2_1_8_4bits_cache-max-entry-count_0.4_cmd.png" width="960"/> <br/>
+<image src="img/lm_interlm2_1_8_4bits_cache-max-entry-count_0.8.png" width="960"/> <br/>
+<image src="img/lm_llava_gradio.png" width="960"/> <br/>
+<image src="img/lm_llava_gradio_1.png" width="960"/> <br/>
+<image src="img/lm_llava_gradio_3.png" width="960"/> <br/>
 ## 基础作业（结营必做）
 完成以下任务，并将实现过程记录截图：
 - 配置lmdeploy运行环境
@@ -246,3 +258,4 @@ if __name__ == '__main__':
 
 该代码首先获取所有教育背景信息，并根据“Java Developer”是否在教育背景中列出，统计获得者数量。最后返回所有获得者的数量，确保满足条件。请注意，此代码仅返回满足特定需求的结果。
 ```
+LMDeploy_internlm2-chat-1_8b-4bit
