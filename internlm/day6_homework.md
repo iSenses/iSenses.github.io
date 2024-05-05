@@ -29,8 +29,8 @@ lmdeploy serve api_server /root/share/new_models/Shanghai_AI_Laboratory/internlm
 
 ### 2. 完成 AgentLego 直接使用部分
 
-<image src="img/ag_hw_road_1.jpg" width="960"/> <br/>
-<image src="img/ag_hw_road_2.jpg" width="960"/> <br/>
+<image src="img/ag_hw_road_1.jpg" width="478"/>
+<image src="img/ag_hw_road_2.jpg" width="478"/> <br/>
 
    
 ## 进阶作业
@@ -51,4 +51,5 @@ lmdeploy serve api_server /root/share/new_models/Shanghai_AI_Laboratory/internlm
 ### 3. 使用 AgentLego 实现适配MagicMaker生成创意图片
 <image src="img/ag_hw_magic_1.png" width="960"/> <br/>
 <image src="img/ag_hw_magic_2.png" width="960"/> <br/>
+<image src="img/ag_hw_magic_3.png" width="960"/> <br/>
 
