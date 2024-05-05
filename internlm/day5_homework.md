@@ -250,16 +250,10 @@ lmdeploy serve api_server \
 <image src="img/lm_llava_gradio_3.png" width="960"/> <br/>
 
 ### lmdeploy openxlab
-- 将 LMDeploy Web Demo 部署到 [OpenXLab](../tools/openxlab-deploy/) （OpenXLab cuda 12.2 的镜像还没有 ready，可先跳过，一周之后再来做）
-[LMDeploy_internlm2-chat-1_8b-4bit](https://openxlab.org.cn/apps/detail/mingyanglee/LMDeploy_internlm2-chat-1_8b-4bit)
+- 将 LMDeploy Web Demo 部署到 OpenXLab: `LMDeploy_internlm2-chat-1_8b-4bit`
+
+成功部署[LMDeploy_internlm2-chat-1_8b-4bit](https://openxlab.org.cn/apps/detail/mingyanglee/LMDeploy_internlm2-chat-1_8b-4bit)
 
 
+<image src="img/lm_openxlab.png" width="960"/> <br/>
 
-
-```shell
-https://b-aide-20240422-633ec18-40079336.intern-ai.org.cn/files/share/new_models/Shanghai_AI_Laboratory/internlm2-chat-1_8b/configuration_internlm2.py?_xsrf=2%7Cc7513c7d%7C032cf67f9c577899b672130f7fc796f2%7C1713747595
-```
-
-internlm2-chat-1_8b-4bit
-```
-LMDeploy_internlm2-chat-1_8b-4bit

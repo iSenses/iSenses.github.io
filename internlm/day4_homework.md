@@ -8,17 +8,21 @@ title: "Day4 - Xtuner微调LLM实战"
 {:toc}
 </nav>
 
-# 第 4 节课作业
+## 基础作业
+### 训练自己的小助手认知
 
-记录复现过程并截图
+![image](img/xt_homework1.png)
+![image](img/xt_homework2.png)
+![image](img/xt_homework3.png)
+![image](img/xt_homework4.png)
+![image](img/xt_homework5.png)
 
-## 基础作业（结营必做）
-
-- 训练自己的小助手认知（记录复现过程并截图）
 
 ## 进阶作业
 
 - 将自我认知的模型上传到 OpenXLab，并将应用部署到 OpenXLab（优秀学员必做）
+
+
 - 复现多模态微调（优秀学员必做）
 ```shell
 (xtuner0.1.17) root@intern-studio-40079336:~/demo/xtuner0117/llava# export MKL_SERVICE_FORCE_INTEL=1
@@ -36,14 +40,6 @@ demo/xtuner0117/llava/work_dirs/internlm2_chat_1_8b_llava_tutorial_config/iter_1
 > --prompt-template internlm2_chat \
 > --image /root/demo/xtuner0117/llava/llava_data/test_img/oph.jpg 
 ```
-
-## 基础作业：训练小助手认知
-
-![image](img/xt_homework1.png)
-![image](img/xt_homework2.png)
-![image](img/xt_homework3.png)
-![image](img/xt_homework4.png)
-![image](img/xt_homework5.png)
 
 ## 进阶作业1： 上传认知模型到OpenXLab
 [gradio_assistant_internlm2](https://openxlab.org.cn/apps/detail/mingyanglee/gradio_assistant_internlm2)

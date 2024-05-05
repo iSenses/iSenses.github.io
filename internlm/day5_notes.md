@@ -1,12 +1,13 @@
 ---
 layout: post
-title: "Day5 LMDeploy 大模型部署工具"
+title: "Day5 - LMDeploy 大模型部署工具"
 ---
 
 
+<nav class="toc-fixed" markdown="1">
 * TOC
 {:toc}
-
+</nav>
 
  
 ## 大模型量化部署必要性
