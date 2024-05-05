@@ -8,65 +8,16 @@ title: "Day5 - LMDeploy课后作业"
 {:toc}
 </nav>
 
-# 第五节课作业（请交到第5节课）
-
 ## 基础作业（结营必做）
-完成以下任务，并将实现过程记录截图：
+### lmdeploy 运行 internlm-chat-1_8b
 - 配置lmdeploy运行环境
+
 - 下载internlm-chat-1.8b模型
+
 - 以命令行方式与模型对话
+初始模型internlm2-chat-1_8b
 
-<image src="img/lm_llava_cmd.png" width="960"/> <br/>
-<image src="img/lm_llava_cmd2.png" width="960"/> <br/>
-
-## 进阶作业
-
-完成以下任务，并将实现过程记录截图：
-- 设置KV Cache最大占用比例为0.4，开启W4A16量化，以命令行方式与模型对话。（优秀学员必做）
-- 以API Server方式启动 lmdeploy，开启 W4A16量化，调整KV Cache的占用比例为0.4，分别使用命令行客户端与Gradio网页客户端与模型对话。（优秀学员）
-```bash
-lmdeploy serve api_server \
-	/root/demo/lmdep/internlm2-chat-1_8b-4bit \
-    --model-format hf \
-    --quant-policy 0 \
-    --server-name 0.0.0.0 \
-    --server-port 23333 \
-	--cache-max-entry-count 0.4 \
-    --tp 1
-```
-
-- 使用W4A16量化，调整KV Cache的占用比例为0.4，使用Python代码集成的方式运行internlm2-chat-1.8b模型。（优秀学员必做）
-- 使用 LMDeploy 运行视觉多模态大模型 llava gradio demo （优秀学员必做）
-- 将 LMDeploy Web Demo 部署到 [OpenXLab](../tools/openxlab-deploy/) （OpenXLab cuda 12.2 的镜像还没有 ready，可先跳过，一周之后再来做）
-
-<image src="img/lm_FastAPI.png" width="960"/> <br/>
-<image src="img/lm_gradio.png" width="960"/> <br/>
-<image src="img/lm_gradio_2.png" width="960"/> <br/>
-<image src="img/lm_interlm2_1_8_4bits_cache-max-entry-count_0.1.png" width="960"/> <br/>
-<image src="img/lm_interlm2_1_8_4bits_cache-max-entry-count_0.4_cmd.png" width="960"/> <br/>
-<image src="img/lm_interlm2_1_8_4bits_cache-max-entry-count_0.8.png" width="960"/> <br/>
-<image src="img/lm_llava_gradio.png" width="960"/> <br/>
-<image src="img/lm_llava_gradio_1.png" width="960"/> <br/>
-<image src="img/lm_llava_gradio_3.png" width="960"/> <br/>
-## 基础作业（结营必做）
-完成以下任务，并将实现过程记录截图：
-- 配置lmdeploy运行环境
-- 下载internlm-chat-1.8b模型
-- 以命令行方式与模型对话
-
-## 进阶作业
-
-完成以下任务，并将实现过程记录截图：
-- 设置KV Cache最大占用比例为0.4，开启W4A16量化，以命令行方式与模型对话。（优秀学员必做）
-- 以API Server方式启动 lmdeploy，开启 W4A16量化，调整KV Cache的占用比例为0.4，分别使用命令行客户端与Gradio网页客户端与模型对话。（优秀学员）
-- 使用W4A16量化，调整KV Cache的占用比例为0.4，使用Python代码集成的方式运行internlm2-chat-1.8b模型。（优秀学员必做）
-- 使用 LMDeploy 运行视觉多模态大模型 llava gradio demo （优秀学员必做）
-- 将 LMDeploy Web Demo 部署到 [OpenXLab](../tools/openxlab-deploy/) （OpenXLab cuda 12.2 的镜像还没有 ready，可先跳过，一周之后再来做）
-
-
-
-
-```
+```console
 (agent) root@intern-studio-40079336:~/demo/lmdep# lmdeploy chat /root/share/new_models/Shanghai_AI_Laboratory/internlm2-chat-1_8b
 2024-04-27 15:02:37,739 - lmdeploy - WARNING - model_source: hf_model
 2024-04-27 15:02:37,739 - lmdeploy - WARNING - kwargs max_batch_size is deprecated to initialize model, use TurbomindEngineConfig instead.
@@ -144,12 +95,9 @@ please provide three suggestions about time management<|im_end|>
 
 ```
 
-```shell
-https://b-aide-20240422-633ec18-40079336.intern-ai.org.cn/files/share/new_models/Shanghai_AI_Laboratory/internlm2-chat-1_8b/configuration_internlm2.py?_xsrf=2%7Cc7513c7d%7C032cf67f9c577899b672130f7fc796f2%7C1713747595
-```
+量化之后的模型internlm2-chat-1_8b-4bit
 
-internlm2-chat-1_8b-4bit
-```shell
+```console
 (agent) root@intern-studio-40079336:~/demo/lmdep# lmdeploy chat /root/demo/lmdep/internlm2-chat-1_8b-4bit --model-format awq --cache-max-entry-count 0.01
 2024-04-27 16:34:36,064 - lmdeploy - WARNING - model_source: hf_model
 2024-04-27 16:34:36,065 - lmdeploy - WARNING - kwargs model_format is deprecated to initialize model, use TurbomindEngineConfig instead.
@@ -257,5 +205,61 @@ if __name__ == '__main__':
 ```
 
 该代码首先获取所有教育背景信息，并根据“Java Developer”是否在教育背景中列出，统计获得者数量。最后返回所有获得者的数量，确保满足条件。请注意，此代码仅返回满足特定需求的结果。
+
+## 进阶作业
+
+### lmdeploy chat 设置KV Cache
+- 设置KV Cache最大占用比例为0.4，开启W4A16量化，以命令行方式与模型对话。
+```bash
+lmdeploy chat \
+	/root/demo/lmdep/internlm2-chat-1_8b-4bit \
+    --model-format hf \
+    --quant-policy 0 \
+	--cache-max-entry-count 0.4 \
+    --tp 1
+```
+
+### lmdeploy API Server
+- 以API Server方式启动 lmdeploy，开启 W4A16量化，调整KV Cache的占用比例为0.4，分别使用命令行客户端与Gradio网页客户端与模型对话。（优秀学员）
+```bash
+lmdeploy serve api_server \
+	/root/demo/lmdep/internlm2-chat-1_8b-4bit \
+    --model-format hf \
+    --quant-policy 0 \
+    --server-name 0.0.0.0 \
+    --server-port 23333 \
+	--cache-max-entry-count 0.4 \
+    --tp 1
+```
+
+<image src="img/lm_FastAPI.png" width="960"/> <br/>
+<image src="img/lm_gradio.png" width="960"/> <br/>
+<image src="img/lm_gradio_2.png" width="960"/> <br/>
+### Use lmdeploy in Python
+- 使用W4A16量化，调整KV Cache的占用比例为0.4，使用Python代码集成的方式运行internlm2-chat-1.8b模型。（优秀学员必做）
+<image src="img/lm_interlm2_1_8_4bits_cache-max-entry-count_0.1.png" width="960"/> <br/>
+<image src="img/lm_interlm2_1_8_4bits_cache-max-entry-count_0.4_cmd.png" width="960"/> <br/>
+<image src="img/lm_interlm2_1_8_4bits_cache-max-entry-count_0.8.png" width="960"/> <br/>
+### lmdeploy Llava
+- 使用 LMDeploy 运行视觉多模态大模型 llava gradio demo 
+<image src="img/lm_llava_cmd.png" width="960"/> <br/>
+<image src="img/lm_llava_cmd2.png" width="960"/> <br/>
+
+<image src="img/lm_llava_gradio.png" width="960"/> <br/>
+<image src="img/lm_llava_gradio_1.png" width="960"/> <br/>
+<image src="img/lm_llava_gradio_3.png" width="960"/> <br/>
+
+### lmdeploy openxlab
+- 将 LMDeploy Web Demo 部署到 [OpenXLab](../tools/openxlab-deploy/) （OpenXLab cuda 12.2 的镜像还没有 ready，可先跳过，一周之后再来做）
+[LMDeploy_internlm2-chat-1_8b-4bit](https://openxlab.org.cn/apps/detail/mingyanglee/LMDeploy_internlm2-chat-1_8b-4bit)
+
+
+
+
+```shell
+https://b-aide-20240422-633ec18-40079336.intern-ai.org.cn/files/share/new_models/Shanghai_AI_Laboratory/internlm2-chat-1_8b/configuration_internlm2.py?_xsrf=2%7Cc7513c7d%7C032cf67f9c577899b672130f7fc796f2%7C1713747595
+```
+
+internlm2-chat-1_8b-4bit
 ```
 LMDeploy_internlm2-chat-1_8b-4bit
