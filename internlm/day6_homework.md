@@ -35,7 +35,7 @@ lmdeploy serve api_server /root/share/new_models/Shanghai_AI_Laboratory/internlm
    
 ## 进阶作业
 
-### 1. 完成 AgentLego WebUI 使用，并在作业中上传截图
+### 1. 完成 AgentLego WebUI 使用
 
 <image src="img/ag_hw_ObjectDetection_0.png" width="960"/> <br/>
 <image src="img/ag_hw_ObjectDetection_1.png" width="960"/> <br/>

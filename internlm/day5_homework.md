@@ -8,7 +8,7 @@ title: "Day5 - LMDeploy课后作业"
 {:toc}
 </nav>
 
-## 基础作业（结营必做）
+## 基础作业
 ### lmdeploy 运行 internlm-chat-1_8b
 - 配置lmdeploy运行环境
 
@@ -208,7 +208,7 @@ if __name__ == '__main__':
 
 ## 进阶作业
 
-### lmdeploy chat 设置KV Cache
+### 1. lmdeploy chat 设置KV Cache
 - 设置KV Cache最大占用比例为0.4，开启W4A16量化，以命令行方式与模型对话。
 ```bash
 lmdeploy chat \
@@ -219,7 +219,7 @@ lmdeploy chat \
     --tp 1
 ```
 
-### lmdeploy API Server
+### 2. 部署lmdeploy API Server
 - 以API Server方式启动 lmdeploy，开启 W4A16量化，调整KV Cache的占用比例为0.4，分别使用命令行客户端与Gradio网页客户端与模型对话。（优秀学员）
 ```bash
 lmdeploy serve api_server \
@@ -240,7 +240,7 @@ lmdeploy serve api_server \
 <image src="img/lm_interlm2_1_8_4bits_cache-max-entry-count_0.1.png" width="960"/> <br/>
 <image src="img/lm_interlm2_1_8_4bits_cache-max-entry-count_0.4_cmd.png" width="960"/> <br/>
 <image src="img/lm_interlm2_1_8_4bits_cache-max-entry-count_0.8.png" width="960"/> <br/>
-### lmdeploy Llava
+### lmdeploy 部署 Llava
 - 使用 LMDeploy 运行视觉多模态大模型 llava gradio demo 
 <image src="img/lm_llava_cmd.png" width="960"/> <br/>
 <image src="img/lm_llava_cmd2.png" width="960"/> <br/>
@@ -249,7 +249,7 @@ lmdeploy serve api_server \
 <image src="img/lm_llava_gradio_1.png" width="960"/> <br/>
 <image src="img/lm_llava_gradio_3.png" width="960"/> <br/>
 
-### lmdeploy openxlab
+### lmdeploy 部署App到OpenXLab
 - 将 LMDeploy Web Demo 部署到 OpenXLab: `LMDeploy_internlm2-chat-1_8b-4bit`
 
 成功部署[LMDeploy_internlm2-chat-1_8b-4bit](https://openxlab.org.cn/apps/detail/mingyanglee/LMDeploy_internlm2-chat-1_8b-4bit)
