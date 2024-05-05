@@ -1,17 +1,27 @@
-# Day7: OpenCompass 大模型评测实战
+---
+layout: post
+title: "Day7 - opencompass 大模型评测"
+output: html_document
+---
 
-## 
+<nav class="toc-fixed" markdown="1">
+* TOC
+{:toc}
+</nav>
+
+## 大模型评测挑战
 - 全面性
 - 评测成本
 - 数据污染
 - 鲁棒性
 
-<image src="img/op_challenge"/>
+<image src="img/op_challenge.png"/>
 <br/>
 <image src="img/op_comps.png"/>
 <br/>
 
-唯一获得Meta官方推荐的国产大模型评测体系, 包含100+评测集， 50万+题目(竞品LM Evaluation, Harness(HF Leaderboard), HELM, BIG-bench)
+`OpenCompass`是目前唯一获得Meta官方推荐的国产大模型评测体系, 包含100+评测集， 50万+题目(竞品LM Evaluation, Harness(HF Leaderboard), HELM, BIG-bench)
+
 ## 评测类型
 - 客观题
 - 主观题
@@ -21,10 +31,10 @@
 - Prompt Engineering
 - Few-shot learning
 - Chain-of-thought
-- needle-in-a-stack
+- long context, needle-in-a-stack
 - Instruction-following
 
-### 三位一体： CompassHub, CompassRank, CompassKit
+## 三位一体： CompassHub, CompassRank, CompassKit
 
 
 
