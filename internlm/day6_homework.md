@@ -260,7 +260,6 @@ streamlit run internlm2_weather_web_demo.py --server.address 127.0.0.1 --server.
 
 MagicMaker 是汇聚了优秀 AI 算法成果的免费 AI 视觉素材生成与创作平台。主要提供图像生成、图像编辑和视频生成三大核心功能，全面满足用户在各种应用场景下的视觉素材创作需求。体验更多功能可以访问 https://magicmaker.openxlab.org.cn/home 。
 
-### 3.1 创建工具文件
 
 首先通过 `touch /root/demo/agent/agentlego/agentlego/tools/magicmaker_image_generation.py`新建工具文件。
 
