@@ -219,6 +219,8 @@ lmdeploy chat \
     --tp 1
 ```
 
+<image src="img/lm_interlm2_1_8_4bits_cache-max-entry-count_0.1.png" width="960"/> <br/>
+
 ### 2. 部署lmdeploy API Server
 - 以API Server方式启动 lmdeploy，开启 W4A16量化，调整KV Cache的占用比例为0.4，分别使用命令行客户端与Gradio网页客户端与模型对话。（优秀学员）
 ```bash
@@ -232,24 +234,35 @@ lmdeploy serve api_server \
     --tp 1
 ```
 
+<image src="img/lm_interlm2_1_8_4bits_cache-max-entry-count_0.4_cmd.png" width="960"/> <br/>
 <image src="img/lm_FastAPI.png" width="960"/> <br/>
 <image src="img/lm_gradio.png" width="960"/> <br/>
-<image src="img/lm_gradio_2.png" width="960"/> <br/>
-### Use lmdeploy in Python
-- 使用W4A16量化，调整KV Cache的占用比例为0.4，使用Python代码集成的方式运行internlm2-chat-1.8b模型。（优秀学员必做）
-<image src="img/lm_interlm2_1_8_4bits_cache-max-entry-count_0.1.png" width="960"/> <br/>
-<image src="img/lm_interlm2_1_8_4bits_cache-max-entry-count_0.4_cmd.png" width="960"/> <br/>
+
+### 3. Use lmdeploy in Python
+- 使用W4A16量化，调整KV Cache的占用比例为0.4，使用Python代码集成的方式运行internlm2-chat-1.8b模型。
+```python
+from lmdeploy import pipeline, TurbomindEngineConfig
+
+backend_config = TurbomindEngineConfig(cache_max_entry_count=0.4)
+
+pipe = pipeline('/root/demo/internlm2-chat-1_8b',
+                backend_config=backend_config)
+response = pipe(['Hi, pls intro yourself', '上海是'])
+print(response)
+```
+
 <image src="img/lm_interlm2_1_8_4bits_cache-max-entry-count_0.8.png" width="960"/> <br/>
-### lmdeploy 部署 Llava
+### 4. lmdeploy 部署 Llava
 - 使用 LMDeploy 运行视觉多模态大模型 llava gradio demo 
 <image src="img/lm_llava_cmd.png" width="960"/> <br/>
 <image src="img/lm_llava_cmd2.png" width="960"/> <br/>
 
 <image src="img/lm_llava_gradio.png" width="960"/> <br/>
 <image src="img/lm_llava_gradio_1.png" width="960"/> <br/>
+<image src="img/lm_gradio_2.png" width="960"/> <br/>
 <image src="img/lm_llava_gradio_3.png" width="960"/> <br/>
 
-### lmdeploy 部署App到OpenXLab
+### 5. lmdeploy 部署App到OpenXLab
 - 将 LMDeploy Web Demo 部署到 OpenXLab: `LMDeploy_internlm2-chat-1_8b-4bit`
 
 成功部署[LMDeploy_internlm2-chat-1_8b-4bit](https://openxlab.org.cn/apps/detail/mingyanglee/LMDeploy_internlm2-chat-1_8b-4bit)
