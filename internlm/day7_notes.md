@@ -76,8 +76,7 @@ https://github.com/open-compass
 <image src="img/op_code2.png" width="960"/>
 <br/>
 
-Partitioners Runners openicl Summarizer
-
+ceval典型的数据集配置
 ```python
 ceval_datasets.append(
 	dict(
