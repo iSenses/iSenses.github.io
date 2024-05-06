@@ -52,9 +52,22 @@ title: "Day5 - LMDeploy 大模型部署工具"
 
 ## 关于LMDeploy 命令行
 
-lmdeploy 的命令行界面十分友好，可以用`lmdeploy -h`, 查看命令， `lmdeploy <命令> -h`, 进一步查看该命令下的选项。
-```shell
+lmdeploy 的命令行界面十分友好，可以用`lmdeploy -h`, 查看命令： 
 
+```
+lmdeploy
+    chat                Chat with pytorch or turbomind engine.
+    lite                Compressing and accelerating LLMs with lmdeploy.lite module
+    serve               Serve LLMs with gradio, openai API or triton server.
+    convert             Convert LLMs to turbomind format.
+    list                List the supported model names.
+    check_env           Check the environmental information.
+    chat                Chat with pytorch or turbomind engine.
+```
+
+然后用`lmdeploy <命令> -h`, 进一步查看该命令下的选项：
+
+```shell
 
 lmdeploy serve api_server 
  [-h]
@@ -89,17 +102,6 @@ lmdeploy serve api_server
 
 ```
 
-
-```
-lmdeploy
-    chat                Chat with pytorch or turbomind engine.
-    lite                Compressing and accelerating LLMs with lmdeploy.lite module
-    serve               Serve LLMs with gradio, openai API or triton server.
-    convert             Convert LLMs to turbomind format.
-    list                List the supported model names.
-    check_env           Check the environmental information.
-    chat                Chat with pytorch or turbomind engine.
-```
 
 lmdeploy template 文件举例：
 ```json
