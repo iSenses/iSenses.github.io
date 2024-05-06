@@ -239,7 +239,8 @@ lmdeploy serve api_server \
 <image src="img/lm_gradio.png" width="960"/> <br/>
 
 ### 3. Use lmdeploy in Python
-- 使用W4A16量化，调整KV Cache的占用比例为0.4，使用Python代码集成的方式运行internlm2-chat-1.8b模型。
+使用W4A16量化，调整KV Cache的占用比例为0.4，使用Python代码集成的方式运行internlm2-chat-1.8b模型  
+建立`pipeline_kv.py`。
 ```python
 from lmdeploy import pipeline, TurbomindEngineConfig
 
@@ -251,19 +252,91 @@ response = pipe(['Hi, pls intro yourself', '上海是'])
 print(response)
 ```
 
+```bash
+python /root/demo/lm/pipeline_kv.py
+```
+
+
 <image src="img/lm_interlm2_1_8_4bits_cache-max-entry-count_0.8.png" width="960"/> <br/>
 ### 4. lmdeploy 部署 Llava
-- 使用 LMDeploy 运行视觉多模态大模型 llava gradio demo 
+使用 LMDeploy 运行视觉多模态大模型 llava gradio demo 
+
+安装llava依赖库。
+```sh
+pip install git+https://github.com/haotian-liu/LLaVA.git@4e2277a060da264c4f21b364c867cc622c945874
+```
+
+新建`pipeline_llava.py` 填入内容如下：
+
+```py
+from lmdeploy.vl import load_image
+from lmdeploy import pipeline, TurbomindEngineConfig
+
+
+backend_config = TurbomindEngineConfig(session_len=8192) # 图片分辨率较高时请调高session_len
+# pipe = pipeline('liuhaotian/llava-v1.6-vicuna-7b', backend_config=backend_config) 非开发机运行此命令
+pipe = pipeline('/share/new_models/liuhaotian/llava-v1.6-vicuna-7b', backend_config=backend_config)
+
+image = load_image('https://raw.githubusercontent.com/open-mmlab/mmdeploy/main/tests/data/tiger.jpeg')
+response = pipe(('describe this image', image))
+print(response)
+```
+
+
+```bash
+python /root/pipeline_llava.py
+```
 <image src="img/lm_llava_cmd.png" width="960"/> <br/>
 <image src="img/lm_llava_cmd2.png" width="960"/> <br/>
 
+或者用gradio生成web前端：
+
+```python
+import gradio as gr
+from lmdeploy import pipeline, TurbomindEngineConfig
+
+
+backend_config = TurbomindEngineConfig(session_len=8192) # 图片分辨率较高时请调高session_len
+# pipe = pipeline('liuhaotian/llava-v1.6-vicuna-7b', backend_config=backend_config) 非开发机运行此命令
+pipe = pipeline('/share/new_models/liuhaotian/llava-v1.6-vicuna-7b', backend_config=backend_config)
+
+def model(image, text):
+    if image is None:
+        return [(text, "请上传一张图片。")]
+    else:
+        response = pipe((text, image)).text
+        return [(text, response)]
+
+demo = gr.Interface(fn=model, inputs=[gr.Image(type="pil"), gr.Textbox()], outputs=gr.Chatbot())
+demo.launch()   
+```
 <image src="img/lm_llava_gradio.png" width="960"/> <br/>
 <image src="img/lm_llava_gradio_1.png" width="960"/> <br/>
 <image src="img/lm_gradio_2.png" width="960"/> <br/>
 <image src="img/lm_llava_gradio_3.png" width="960"/> <br/>
 
 ### 5. lmdeploy 部署App到OpenXLab
-- 将 LMDeploy Web Demo 部署到 OpenXLab: `LMDeploy_internlm2-chat-1_8b-4bit`
+将 LMDeploy Web Demo 部署到 OpenXLab: `LMDeploy_internlm2-chat-1_8b-4bit`
+
+根据[教程](https://openxlab.org.cn/docs/en/apps/Gradio%E5%BA%94%E7%94%A8.html)，编写`app.py`等文件：
+```python
+
+import os
+import warnings
+from lmdeploy.serve.gradio.turbomind_coupled import run_local
+from lmdeploy import pipeline, TurbomindEngineConfig, ChatTemplateConfig
+
+warnings.simplefilter("ignore")
+
+backend_config = TurbomindEngineConfig(cache_max_entry_count=0.2)
+chat_template_config = ChatTemplateConfig(model_name='internlm2-chat-1_8b')
+
+base_path = './4bit-1_8b'
+os.system(f'git clone https://code.openxlab.org.cn/mingyanglee/internlm2-chat-1_8b-4bit.git {base_path}')
+
+
+run_local(base_path, model_name='internlm2-chat-1_8b', backend_config=backend_config, chat_template_config=chat_template_config, server_port=7860, tp=1)
+```
 
 成功部署[LMDeploy_internlm2-chat-1_8b-4bit](https://openxlab.org.cn/apps/detail/mingyanglee/LMDeploy_internlm2-chat-1_8b-4bit)
 
