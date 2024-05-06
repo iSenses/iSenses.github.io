@@ -10,7 +10,7 @@ output: html_document
 {:toc}
 </nav>
 
-## 基础作业7
+## 基础作业
 
 ### 1. 完成 Lagent Web Demo 使用
 
