@@ -9,16 +9,27 @@ title: "Day5 - LMDeploy 大模型部署工具"
 {:toc}
 </nav>
 
+<image src="img/lm_01.jpg"/><br/>
  
-## 大模型量化部署必要性
+## 大模型量化部署方案必要性
 - 模型巨大参数量
+<image src="img/lm_02.jpg"/><br/>
 - k/v cache缓存
+<image src="img/lm_03.jpg"/><br/>
 - 请求数不固定
+<image src="img/lm_04.jpg"/><br/>
 - decoder-only 结构
 
 ## 大模型部署方案
+- 模型剪枝
+<image src="img/lm_05.jpg"/><br/>
+- 知识蒸馏
+<image src="img/lm_07.jpg"/><br/>
 - 模型并行
 - 低比特量化
+有效利用GPU提高模型推理效率的方法：
+1.基于warp分组并行化,2.压缩参数表示以减少访存.
+<image src="img/lm_10.jpg"/><br/>
 - Page Attention
 - Transformer 计算和访存优化
 - Continuous Batch
@@ -26,22 +37,22 @@ title: "Day5 - LMDeploy 大模型部署工具"
 ## 竞品方案
 - huggingface transformers
 - lmdeploy
+
+<image src="img/lm_11.jpg"/><br/>
+<image src="img/lm_08.jpg"/><br/>
+<image src="img/lm_06.jpg"/><br/>
+<image src="img/lm_12.jpg"/><br/>
+<image src="img/lm_14.jpg"/><br/>
+<image src="img/lm_15.jpg"/><br/>
 - vllm
 - tensorrt-llm
 - deepspeed
 - llama.cpp
 - mlc-llm
 
-
-## 关于量化算法
-
-有效利用GPU提高模型推理效率的方法：
-1.基于warp分组并行化,2.压缩参数表示以减少访存.
-
 ## 关于LMDeploy 命令行
 
-lmdeploy 实现了一个
-
+lmdeploy 的命令行界面十分友好，可以用`lmdeploy -h`, 查看命令， `lmdeploy <命令> -h`, 进一步查看该命令下的选项。
 ```shell
 
 
@@ -90,6 +101,7 @@ lmdeploy
     chat                Chat with pytorch or turbomind engine.
 ```
 
+lmdeploy template 文件举例：
 ```json
 {
 	"model_name": "Chat Template Name",
@@ -113,17 +125,3 @@ serve('internlm/internlm2-chat-7b', chat_template_config=ChatTemplateConfig.from
 
 
 
-<image src="img/lm_01.jpg"/><br/>
-<image src="img/lm_02.jpg"/><br/>
-<image src="img/lm_03.jpg"/><br/>
-<image src="img/lm_04.jpg"/><br/>
-<image src="img/lm_05.jpg"/><br/>
-<image src="img/lm_06.jpg"/><br/>
-<image src="img/lm_07.jpg"/><br/>
-<image src="img/lm_08.jpg"/><br/>
-<image src="img/lm_09.jpg"/><br/>
-<image src="img/lm_10.jpg"/><br/>
-<image src="img/lm_12.jpg"/><br/>
-<image src="img/lm_13.jpg"/><br/>
-<image src="img/lm_14.jpg"/><br/>
-<image src="img/lm_15.jpg"/><br/>
