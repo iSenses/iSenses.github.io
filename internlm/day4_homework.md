@@ -77,9 +77,67 @@ xtuner copy-cfg internlm2_1_8b_qlora_alpaca_e3 /root/demo/ft/config
 + dataset_map_fn=openai_map_fn,
 ```
 
+配置好了， 可以开始训练了，使用 deepspeed 来加速训练
+```shell
+xtuner train /root/demo/ft/config/internlm2_1_8b_qlora_alpaca_e3_copy.py --work-dir /root/demo/ft/train_deepspeed --deepspeed deepspeed_zero2
+```
+
+
+训练好了，可以准备试用了。  
+先要转换模型格式，创建一个保存转换后 Huggingface 格式的文件夹，然后转换，与原模型合并。
+
+``` bash
+mkdir -p /root/ft/huggingface
+
+# 模型转换
+# xtuner convert pth_to_hf ${配置文件地址} ${权重文件地址} ${转换后模型保存地址}
+xtuner convert pth_to_hf /root/ft/train/internlm2_1_8b_qlora_alpaca_e3_copy.py /root/ft/train/iter_500.pth /root/demo/ft/huggingface/500
+
+xtuner convert pth_to_hf /root/ft/train/internlm2_1_8b_qlora_alpaca_e3_copy.py /root/ft/train/iter_500.pth /root/demo/ft/huggingface/500 --fp32 --max-shard-size 2GB
+
+makdir -p /root/demo/final_model/500
+export MKL_SERVICE_FORCE_INTEL=1
+xtuner convert merge /root/demo/ft/model/internlm2-chat-1_8b  /root/demo/ft/huggingface/500 /root/demo/ft/final_model/500
+
+```
+
+可以试用啦！先直接命令行
+
+```shell
+xtuner chat /root/demo/ft/final_model/500 --prompt-template internlm2_chat
+```
 
 ![image](img/xt_homework1.png)
 ![image](img/xt_homework2.png)
+
+
+使用基于`streamlit`的webdemo
+```shell
+pip install streamlit==1.24.0
+
+```
+
+
+进入InternLM文件夹， 修改InternLM/chat/web_demo.py
+```diff
+- model = (AutoModelForCausalLM.from_pretrained('/root/model',
++ model = (AutoModelForCausalLM.from_pretrained('/root/demo/ft/final_model/500',
+- tokenizer = AutoTokenizer.from_pretrained('/root/_model',
++ tokenizer = AutoTokenizer.from_pretrained('/root/demo/ft/final_model/500',
+```
+
+运行streamlit
+```shell
+streamlit run /root/demo/InternLM/chat/web_demo.py --server.address 127.0.0.1 --server.port 6006
+```
+
+在本机上运行端口映射，使用https://studio.intern-ai.org.cn/console/instance 页面获得的密码：
+```shell
+ssh -CNg -L 6006:127.0.0.1:6006 root@ssh.intern-ai.org.cn -p 44815
+```
+
+使在http://127.0.0.1:6006使用模型：
+
 ![image](img/xt_homework3.png)
 ![image](img/xt_homework4.png)
 ![image](img/xt_homework5.png)
@@ -96,7 +154,13 @@ xtuner copy-cfg internlm2_1_8b_qlora_alpaca_e3 /root/demo/ft/config
 ![image](img/xt_homework_openxlab.png)
 ## 2. 复现多模态微调
 
-- 复现多模态微调
+继续使用前面配置好的环境，并利用提供的Llava数据， 根据需要修改路径, 开始微调：
+```
+
+xtuner train /root/demo/tutorial/xtuner/llava/llava_internlm2_chat_1_8b_qlora_clip_vit_large_p14_336_lora_e1_gpu8_finetune_copy.py --deepspeed deepspeed_zero2
+```
+
+转换训练成果，与训练前对比：
 ```console
 (xtuner0.1.17) root@intern-studio-40079336:~/demo/xtuner0117/llava# export MKL_SERVICE_FORCE_INTEL=1
 (xtuner0.1.17) root@intern-studio-40079336:~/demo/xtuner0117/llava# export MKL_THREADING_LAYER=GNU
